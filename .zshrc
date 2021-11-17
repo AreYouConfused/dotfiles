@@ -25,6 +25,7 @@ export EDITOR=/usr/bin/nvim
 export VISUAL=/usr/bin/nvim
 WORDCHARS=${WORDCHARS//\/[&.;]}                                 # Don't consider certain characters part of the word
 
+PATH="$HOME/.local/bin:$PATH"
 
 ## Keybindings section
 bindkey -e
@@ -58,18 +59,11 @@ alias cp="cp -i"                                                # Confirm before
 alias df='df -h'                                                # Human-readable sizes
 alias free='free -m'                                            # Show sizes in MB
 alias make='make -j'
-alias gitu='git add . && git commit && git push'
 alias ls='ls --color=auto'
 alias ll='ls -AlhF --color=auto'
-alias update='echo "pamac update" && pamac update'
-alias v='vim'
 alias vpn='nordvpn connect'
 alias cvpn='nordvpn disconnect'
-alias p='sudo pacman'
-alias s='sudo systemctl'
 alias config='/usr/bin/git --git-dir=$HOME/dotfiles --work-tree=$HOME'
-alias svim='sudo nvim'
-alias vim='nvim'
 alias cb='xclip -selection clipboard'
 alias pc='xclip -selection clipboard -o'
 alias diff='diff --color'
