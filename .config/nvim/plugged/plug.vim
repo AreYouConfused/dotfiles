@@ -6,7 +6,7 @@ Plug 'https://github.com/ervandew/supertab'
 Plug 'joshdick/onedark.vim'
 Plug 'https://github.com/vim-airline/vim-airline'
 Plug 'junegunn/vim-easy-align'
-"Plug 'dense-analysis/ale'
+Plug 'dense-analysis/ale'
 
 call plug#end()
 
@@ -26,11 +26,12 @@ let g:airline_symbols.branch = ''
 let g:airline_symbols.readonly = ''
 let g:airline_symbols.linenr = ''
 
-""ale
-"let g:ale_lint_on_enter = 0
-"let g:airline#extensions#ale#enabled = 1
-"let g:ale_linters = {'cpp': ['cpplint'],}
-"let g:ale_fixers = {
-"\		'*': ['remove_trailing_lines', 'trim_whitespace'],
-"\     'cpp': ['clang-format'],
-"\}
+"ale
+let g:ale_lint_on_enter = 0
+let g:airline#extensions#ale#enabled = 1
+let g:ale_linters = {'cpp': ['cpplint'],}
+let g:ale_fixers = {
+\		'*': ['remove_trailing_lines', 'trim_whitespace'],
+\     'cpp': ['clang-format'],
+\  'python': ['add_blank_lines_for_python_control_statements',],
+\}
