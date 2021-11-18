@@ -2,11 +2,11 @@ call plug#begin('~/.config/nvim/plugged')
 
 Plug 'https://github.com/bfrg/vim-cpp-modern'
 Plug 'frazrepo/vim-rainbow'
-Plug 'https://github.com/ervandew/supertab'
+"Plug 'https://github.com/ervandew/supertab'
 Plug 'joshdick/onedark.vim'
 Plug 'https://github.com/vim-airline/vim-airline'
 Plug 'junegunn/vim-easy-align'
-Plug 'dense-analysis/ale'
+"Plug 'dense-analysis/ale'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
 call plug#end()
@@ -28,11 +28,23 @@ let g:airline_symbols.readonly = ''
 let g:airline_symbols.linenr = ''
 
 "ale
-let g:ale_lint_on_enter = 0
-let g:airline#extensions#ale#enabled = 1
-let g:ale_linters = {'cpp': ['cpplint'],}
-let g:ale_fixers = {
-\		'*': ['remove_trailing_lines', 'trim_whitespace'],
-\     'cpp': ['clang-format'],
-\  'python': ['add_blank_lines_for_python_control_statements', 'black'],
-\}
+"let g:ale_lint_on_enter = 0
+"let g:airline#extensions#ale#enabled = 1
+"let g:ale_linters = {
+"\     'cpp': ['cpplint'],
+"\  'python': ['pylint'],
+"\}
+"
+"let g:ale_fixers = {
+"\		'*': ['remove_trailing_lines', 'trim_whitespace'],
+"\     'cpp': ['clang-format'],
+"\  'python': ['add_blank_lines_for_python_control_statements', 'black'],
+"\}
+
+"coc.nvim
+function! s:check_back_space() abort
+  let col = col('.') - 1
+  return !col || getline('.')[col - 1]  =~# '\s'
+endfunction
+
+set signcolumn=yes

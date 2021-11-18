@@ -4,8 +4,8 @@ set sw=4
 set path+=**
 set cursorline
 
-source /home/still/.config/nvim/plugged/plug.vim
-source /home/still/.config/nvim/themes/onedark.vim
-source /home/still/.config/nvim/keybinds.vim
+source $HOME/.config/nvim/vim-plug.vim
+source $HOME/.config/nvim/themes/onedark.vim
+source $HOME/.config/nvim/keybinds.vim
 
-let g:rainbow_active = 1
+"let g:rainbow_active = 1
