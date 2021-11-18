@@ -7,6 +7,7 @@ Plug 'joshdick/onedark.vim'
 Plug 'https://github.com/vim-airline/vim-airline'
 Plug 'junegunn/vim-easy-align'
 Plug 'dense-analysis/ale'
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
 call plug#end()
 
@@ -33,5 +34,5 @@ let g:ale_linters = {'cpp': ['cpplint'],}
 let g:ale_fixers = {
 \		'*': ['remove_trailing_lines', 'trim_whitespace'],
 \     'cpp': ['clang-format'],
-\  'python': ['add_blank_lines_for_python_control_statements',],
+\  'python': ['add_blank_lines_for_python_control_statements', 'black'],
 \}
