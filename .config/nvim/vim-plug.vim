@@ -1,13 +1,15 @@
 call plug#begin('~/.config/nvim/plugged')
 
 Plug 'https://github.com/bfrg/vim-cpp-modern'
-"Plug 'frazrepo/vim-rainbow'
+Plug 'frazrepo/vim-rainbow'
 "Plug 'https://github.com/ervandew/supertab'
 Plug 'joshdick/onedark.vim'
 Plug 'https://github.com/vim-airline/vim-airline'
 Plug 'junegunn/vim-easy-align'
 "Plug 'dense-analysis/ale'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'https://github.com/Raimondi/delimitMate'
+Plug 'KabbAmine/vCoolor.vim'
 
 call plug#end()
 
@@ -26,6 +28,10 @@ let g:airline_right_alt_sep = ''
 let g:airline_symbols.branch = ''
 let g:airline_symbols.readonly = ''
 let g:airline_symbols.linenr = ''
+
+" vim-rainbow
+let g:rainbow_active = 1
+let g:rainbow_guifgs = ['skyblue', 'goldenrod', '#723D7E']
 
 "ale
 "let g:ale_lint_on_enter = 0

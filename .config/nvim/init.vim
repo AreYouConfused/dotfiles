@@ -9,4 +9,8 @@ runtime vim-plug.vim
 runtime coc.vim
 runtime themes/onedark.vim
 runtime keybinds.vim
-"let g:rainbow_active = 1
+
+"autocmd FileType c   setlocal foldmethod=marker
+"autocmd FileType c   setlocal foldmarker=/*,*/
+"autocmd FileType cpp setlocal foldmethod=marker
+"autocmd FileType cpp setlocal foldmarker=/*,*/
