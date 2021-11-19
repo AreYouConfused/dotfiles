@@ -12,3 +12,15 @@ inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
 
 nmap <F2> <Plug>(coc-rename)
 
+function! CocToggle()
+    if g:coc_enabled
+        CocDisable
+		set signcolumn=auto
+    else
+        CocEnable
+		set signcolumn=yes
+    endif
+endfunction
+command! CocToggle :call CocToggle()
+
+nmap <C-h><C-h> :call CocToggle()<CR>
