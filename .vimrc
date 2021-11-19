@@ -250,3 +250,5 @@ if (has("termguicolors"))
     set termguicolors
     hi LineNr ctermbg=NONE guibg=NONE
 endif
+
+let g:coc_global_extensions = ['coc-json', 'coc-yank', 'coc-snippets', 'coc-highlight', 'coc-vimlsp', 'coc-tsserver', 'coc-sh', 'coc-pyright', 'coc-clangd']
