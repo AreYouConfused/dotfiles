@@ -1,7 +1,7 @@
 call plug#begin('~/.config/nvim/plugged')
 
 Plug 'https://github.com/bfrg/vim-cpp-modern'
-Plug 'frazrepo/vim-rainbow'
+"Plug 'frazrepo/vim-rainbow'
 "Plug 'https://github.com/ervandew/supertab'
 Plug 'joshdick/onedark.vim'
 Plug 'https://github.com/vim-airline/vim-airline'
