@@ -31,7 +31,7 @@ let g:airline_symbols.linenr = ''
 
 " vim-rainbow
 let g:rainbow_active = 1
-let g:rainbow_guifgs = ['skyblue', 'goldenrod', '#723D7E']
+let g:rainbow_guifgs = ['skyblue', 'goldenrod', '#c678dd']
 
 "ale
 "let g:ale_lint_on_enter = 0
