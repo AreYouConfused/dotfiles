@@ -17,5 +17,8 @@
 	"snippets.ultisnips.directories": [
 		"UltiSnips",
 		"~/.config/nvim/utils/snips"
-	]
+	],
+	"diagnostic.warningSign": "!!",
+	"diagnostic.errorSign": "!!",
+	"diagnostic.infoSign": ">>"
 }

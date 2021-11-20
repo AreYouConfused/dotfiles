@@ -20,7 +20,13 @@ set updatetime=300
 set shortmess+=c
 
 " Always show the signcolumn, otherwise it would shift the text each time
-set signcolumn=yes
+" diagnostics appear/become resolved.
+if has("nvim-0.5.0") || has("patch-8.1.1564")
+  " Recently vim can merge signcolumn and number column into one
+  set signcolumn=number
+else
+  set signcolumn=yes
+endif
 
 function! s:check_back_space() abort
   let col = col('.') - 1
@@ -151,3 +157,4 @@ nnoremap <silent><nowait> <space>p  :<C-u>CocListResume<CR>
 
 
 let g:coc_global_extensions = ['coc-json', 'coc-yank', 'coc-snippets', 'coc-highlight', 'coc-vimlsp', 'coc-tsserver', 'coc-sh', 'coc-pyright', 'coc-clangd']
+

@@ -47,14 +47,6 @@ let g:rainbow_guifgs = ['skyblue', 'goldenrod', '#723D7E']
 "\  'python': ['add_blank_lines_for_python_control_statements', 'black'],
 "\}
 
-"coc.nvim
-function! s:check_back_space() abort
-  let col = col('.') - 1
-  return !col || getline('.')[col - 1]  =~# '\s'
-endfunction
-
-set signcolumn=yes
-
 inoremap {<cr> {<cr>}<c-o>O<tab>
 inoremap [<cr> [<cr>]<c-o>O<tab>
 inoremap (<cr> (<cr>)<c-o>O<tab>
