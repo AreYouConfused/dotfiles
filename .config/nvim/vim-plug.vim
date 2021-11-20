@@ -54,3 +54,8 @@ function! s:check_back_space() abort
 endfunction
 
 set signcolumn=yes
+
+inoremap {<cr> {<cr>}<c-o>O<tab>
+inoremap [<cr> [<cr>]<c-o>O<tab>
+inoremap (<cr> (<cr>)<c-o>O<tab>
+
