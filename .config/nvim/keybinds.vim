@@ -24,3 +24,6 @@ endfunction
 command! CocToggle :call CocToggle()
 
 nmap <C-h><C-h> :call CocToggle()<CR>
+
+nmap <C-j> <plug>(coc-diagnostic-next)
+nmap <C-k> <plug>(coc-diagnostic-prev)

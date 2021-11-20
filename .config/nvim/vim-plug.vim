@@ -4,7 +4,7 @@ Plug 'https://github.com/bfrg/vim-cpp-modern'
 Plug 'frazrepo/vim-rainbow'
 "Plug 'https://github.com/ervandew/supertab'
 Plug 'joshdick/onedark.vim'
-Plug 'https://github.com/vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline'
 Plug 'junegunn/vim-easy-align'
 "Plug 'dense-analysis/ale'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
