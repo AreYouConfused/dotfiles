@@ -10,6 +10,7 @@ Plug 'junegunn/vim-easy-align'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'https://github.com/Raimondi/delimitMate'
 Plug 'KabbAmine/vCoolor.vim'
+Plug 'IngoMeyer441/coc_current_word'
 
 call plug#end()
 
@@ -51,3 +52,5 @@ inoremap {<cr> {<cr>}<c-o>O<tab>
 inoremap [<cr> [<cr>]<c-o>O<tab>
 inoremap (<cr> (<cr>)<c-o>O<tab>
 
+let g:coc_current_word_highlight_delay = 0
+let g:coc_current_word_filetypes = ['*']

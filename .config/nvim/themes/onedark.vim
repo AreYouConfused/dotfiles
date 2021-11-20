@@ -10,6 +10,10 @@ if (has("autocmd") && !has("gui_running"))
 	autocmd ColorScheme * call onedark#extend_highlight("LineNr", { "fg": { "gui": "grey" }})
 	autocmd ColorScheme * call onedark#extend_highlight("CursorLineNr", { "bg": { "gui": "black" }})
 	autocmd ColorScheme * call onedark#extend_highlight("EndOfBuffer", { "fg": {"gui": "grey" }})
+	autocmd ColorScheme * call onedark#extend_highlight("VertSplit", { "fg": {"gui": "white" }})
+	autocmd ColorScheme * call onedark#extend_highlight("SpecialKey", { "fg": {"gui": "grey" }})
+	autocmd ColorScheme * call onedark#extend_highlight("NonText", { "fg": {"gui": "grey" }})
+    autocmd ColorScheme * highlight CocHighlightText guibg=black gui=bold ctermbg=black cterm=bold
   augroup END
 endif
 
