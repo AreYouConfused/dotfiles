@@ -12,17 +12,16 @@ Plug 'ervandew/supertab'
 Plug 'joshdick/onedark.vim'
 Plug 'vim-airline/vim-airline'
 Plug 'junegunn/vim-easy-align'
-"Plug 'dense-analysis/ale'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
-"Plug 'https://github.com/Raimondi/delimitMate'
 Plug 'KabbAmine/vCoolor.vim'
 Plug 'IngoMeyer441/coc_current_word'
 Plug 'voldikss/vim-floaterm'
 Plug 'alvan/vim-closetag'
+Plug 'luochen1990/indent-detector.vim'
 
 call plug#end()
 
-" air-line
+" airline
 let g:airline_powerline_fonts = 1
 
 if !exists('g:airline_symbols')
@@ -41,24 +40,6 @@ let g:airline_symbols.linenr = ''
 " vim-rainbow
 let g:rainbow_active = 1
 let g:rainbow_guifgs = ['skyblue', 'goldenrod', '#c678dd']
-
-"ale
-"let g:ale_lint_on_enter = 0
-"let g:airline#extensions#ale#enabled = 1
-"let g:ale_linters = {
-"\     'cpp': ['cpplint'],
-"\  'python': ['pylint'],
-"\}
-"
-"let g:ale_fixers = {
-"\		'*': ['remove_trailing_lines', 'trim_whitespace'],
-"\     'cpp': ['clang-format'],
-"\  'python': ['add_blank_lines_for_python_control_statements', 'black'],
-"\}
-
-inoremap {<cr> {<cr>}<c-o>O<tab>
-inoremap [<cr> [<cr>]<c-o>O<tab>
-inoremap (<cr> (<cr>)<c-o>O<tab>
 
 let g:coc_current_word_highlight_delay = 0
 let g:coc_current_word_filetypes = ['*']
