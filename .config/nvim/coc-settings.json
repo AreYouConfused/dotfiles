@@ -20,5 +20,10 @@
 	],
 	"diagnostic.warningSign": "!!",
 	"diagnostic.errorSign": "!!",
-	"diagnostic.infoSign": ">>"
+	"diagnostic.infoSign": ">>",
+	"explorer.position": "left",
+	"explorer.floating.position": "center",
+	"explorer.previewAction.onHover": "content",
+	"explorer.file.showHiddenFiles": true,
+	"explorer.quitOnOpen": true
 }

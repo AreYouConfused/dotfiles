@@ -2,7 +2,7 @@ call plug#begin('~/.config/nvim/plugged')
 
 Plug 'https://github.com/bfrg/vim-cpp-modern'
 Plug 'frazrepo/vim-rainbow'
-"Plug 'https://github.com/ervandew/supertab'
+Plug 'https://github.com/ervandew/supertab'
 Plug 'joshdick/onedark.vim'
 Plug 'vim-airline/vim-airline'
 Plug 'junegunn/vim-easy-align'
@@ -54,3 +54,8 @@ inoremap (<cr> (<cr>)<c-o>O<tab>
 
 let g:coc_current_word_highlight_delay = 0
 let g:coc_current_word_filetypes = ['*']
+
+let g:SuperTabDefaultCompletionType = "<c-n>"
+
+nmap <space>f <Cmd>CocCommand explorer<CR>
+
