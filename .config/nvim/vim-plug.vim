@@ -12,6 +12,7 @@ Plug 'https://github.com/Raimondi/delimitMate'
 Plug 'KabbAmine/vCoolor.vim'
 Plug 'IngoMeyer441/coc_current_word'
 Plug 'voldikss/vim-floaterm'
+Plug 'alvan/vim-closetag'
 
 call plug#end()
 
