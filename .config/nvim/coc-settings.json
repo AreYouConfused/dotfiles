@@ -25,5 +25,9 @@
 	"explorer.floating.position": "center",
 	"explorer.previewAction.onHover": "content",
 	"explorer.file.showHiddenFiles": true,
-	"explorer.quitOnOpen": true
+	"explorer.quitOnOpen": true,
+	"pairs.enableBackspace": true,
+	"pairs.disableLanguages": [
+		"json"
+	]
 }
