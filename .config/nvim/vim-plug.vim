@@ -6,9 +6,9 @@ endif
 
 call plug#begin('~/.config/nvim/plugged')
 
-Plug 'https://github.com/bfrg/vim-cpp-modern'
+Plug 'bfrg/vim-cpp-modern'
 Plug 'frazrepo/vim-rainbow'
-Plug 'https://github.com/ervandew/supertab'
+Plug 'ervandew/supertab'
 Plug 'joshdick/onedark.vim'
 Plug 'vim-airline/vim-airline'
 Plug 'junegunn/vim-easy-align'
