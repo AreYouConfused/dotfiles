@@ -14,7 +14,7 @@ Plug 'vim-airline/vim-airline'
 Plug 'junegunn/vim-easy-align'
 "Plug 'dense-analysis/ale'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
-Plug 'https://github.com/Raimondi/delimitMate'
+"Plug 'https://github.com/Raimondi/delimitMate'
 Plug 'KabbAmine/vCoolor.vim'
 Plug 'IngoMeyer441/coc_current_word'
 Plug 'voldikss/vim-floaterm'

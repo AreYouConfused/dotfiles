@@ -156,5 +156,5 @@ nnoremap <silent><nowait> <space>k  :<C-u>CocPrev<CR>
 nnoremap <silent><nowait> <space>p  :<C-u>CocListResume<CR>
 
 
-let g:coc_global_extensions = ['coc-json', 'coc-yank', 'coc-snippets', 'coc-highlight', 'coc-vimlsp', 'coc-tsserver', 'coc-sh', 'coc-pyright', 'coc-clangd', 'coc-explorer']
+let g:coc_global_extensions = ['coc-json', 'coc-yank', 'coc-snippets', 'coc-highlight', 'coc-vimlsp', 'coc-tsserver', 'coc-sh', 'coc-pyright', 'coc-clangd', 'coc-explorer', 'coc-pairs']
 
