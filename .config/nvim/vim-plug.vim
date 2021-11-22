@@ -46,5 +46,3 @@ let g:coc_current_word_filetypes = ['*']
 
 let g:SuperTabDefaultCompletionType = "<c-n>"
 
-nmap <space>f <Cmd>CocCommand explorer<CR>
-

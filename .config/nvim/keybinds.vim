@@ -33,3 +33,5 @@ inoremap {<cr> {<cr>}<c-o>O
 inoremap [<cr> [<cr>]<c-o>O
 inoremap (<cr> (<cr>)<c-o>O
 
+nmap <space>f <Cmd>CocCommand explorer<CR>
+
