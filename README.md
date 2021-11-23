@@ -8,3 +8,7 @@ config pull
 config submodule update
 config config --local status.showUntrackedFiles no
 ```
+
+you may need to run a rest to over write your current files
+
+`config reset --hard`
