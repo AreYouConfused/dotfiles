@@ -59,7 +59,7 @@ alias cp="cp -i"                                                # Confirm before
 alias df='df -h'                                                # Human-readable sizes
 alias free='free -m'                                            # Show sizes in MB
 alias make='make -j'
-alias ls='ls --color=auto'
+alias ls='ls -v --color=auto'
 alias ll='ls -AlhF --color=auto'
 alias vpn='nordvpn connect'
 alias cvpn='nordvpn disconnect'
