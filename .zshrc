@@ -63,12 +63,12 @@ alias ls='ls -v --color=auto'
 alias ll='ls -AlhF --color=auto'
 alias vpn='nordvpn connect'
 alias cvpn='nordvpn disconnect'
-alias config='/usr/bin/git --git-dir=$HOME/dotfiles --work-tree=$HOME'
 alias cb='xclip -selection clipboard'
 alias pc='xclip -selection clipboard -o'
 alias diff='diff --color'
 alias youtube-dl='yt-dlp'
 alias config='/usr/bin/git --git-dir=$HOME/.dotfiles --work-tree=$HOME'
+alias se='sudoedit'
 
 #
 # # ex - archive extractor
