@@ -35,3 +35,4 @@ inoremap (<cr> (<cr>)<c-o>O
 
 nmap <space>f <Cmd>CocCommand explorer<CR>
 
+nmap <leader>f <Cmd>CocFix<cr>
