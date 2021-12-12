@@ -29,9 +29,9 @@ nmap <C-k> <plug>(coc-diagnostic-prev)
 nnoremap   <silent>   <F12>   :FloatermToggle<CR>
 tnoremap   <silent>   <F12>   <C-\><C-n>:FloatermToggle<CR>
 
-inoremap {<cr> {<cr>}<c-o>O
-inoremap [<cr> [<cr>]<c-o>O
-inoremap (<cr> (<cr>)<c-o>O
+inoremap {}<cr> {<cr>}<c-o>O
+inoremap []<cr> [<cr>]<c-o>O
+inoremap ()<cr> (<cr>)<c-o>O
 
 nmap <space>f <Cmd>CocCommand explorer<CR>
 
