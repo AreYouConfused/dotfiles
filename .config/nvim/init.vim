@@ -4,6 +4,7 @@ set sw=4
 set path+=**
 set cursorline
 set noshowmode 
+set listchars=tab:\|->,space:·,nbsp:␣,trail:•,eol:$,precedes:«,extends:»
 
 runtime vim-plug.vim
 runtime coc.vim
