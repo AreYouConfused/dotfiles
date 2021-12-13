@@ -118,7 +118,7 @@ setopt prompt_subst
  PROMPT="%B%{$fg[cyan]%}%(4~|%-1~/.../%2~|%~)%u%b >%{$fg[cyan]%}>%B%(?.%{$fg[cyan]%}.%{$fg[red]%})>%{$reset_color%}%b " 
 # Print some system information when the shell is first started
 # Print a greeting message when shell is started $USER@$HOST  
-echo $fg[yellow]$USER$reset_color@$fg[yellow]$HOST$reset_color $(uname -smr)$reset_colors
+#echo $fg[yellow]$USER$reset_color@$fg[yellow]$HOST$reset_color $(uname -smr)$reset_colors
 ## Prompt on right side:
 #  - shows exit status of previous command (if previous command finished with an error)
 #  - is invisible, if neither is the case
