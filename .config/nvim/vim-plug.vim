@@ -8,7 +8,7 @@ call plug#begin('~/.config/nvim/plugged')
 
 Plug 'bfrg/vim-cpp-modern'
 Plug 'frazrepo/vim-rainbow'
-Plug 'ervandew/supertab'
+"Plug 'ervandew/supertab'
 Plug 'joshdick/onedark.vim'
 Plug 'vim-airline/vim-airline'
 Plug 'junegunn/vim-easy-align'
@@ -17,7 +17,9 @@ Plug 'KabbAmine/vCoolor.vim'
 Plug 'IngoMeyer441/coc_current_word'
 Plug 'voldikss/vim-floaterm'
 Plug 'alvan/vim-closetag'
-Plug 'luochen1990/indent-detector.vim'
+"Plug 'luochen1990/indent-detector.vim'
+Plug 'tpope/vim-sleuth'
+Plug 'Thyrum/vim-stabs'
 
 call plug#end()
 

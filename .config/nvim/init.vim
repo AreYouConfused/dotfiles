@@ -1,15 +1,16 @@
-set number
-set tabstop=4
-set sw=4
-set path+=**
-set cursorline
-set noshowmode 
-set listchars=tab:\|->,space:·,nbsp:␣,trail:•,eol:$,precedes:«,extends:»
-
 runtime vim-plug.vim
 runtime coc.vim
 runtime themes/onedark.vim
 runtime keybinds.vim
+
+set number
+set tabstop=4
+set sw=4
+set sts=4
+set path+=**
+set cursorline
+set noshowmode 
+set listchars=tab:\|->,space:·,nbsp:␣,trail:•,eol:$,precedes:«,extends:»
 
 "autocmd FileType c   setlocal foldmethod=marker
 "autocmd FileType c   setlocal foldmarker=/*,*/
@@ -32,3 +33,4 @@ function! ResizeSplits()
     set winwidth=85
     wincmd =
 endfunction
+
