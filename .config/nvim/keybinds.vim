@@ -57,8 +57,7 @@ nmap <leader>f <Cmd>CocFix<cr>
 
 nmap <leader>l <Cmd>set list!<cr>
 
-autocmd FileType c,cpp nmap <F5> :make run<CR>
+autocmd FileType c,cpp nmap <F5> :term make run<CR>
 
 nmap <C-[> :prev<cr>
 nmap <C-]> :next<cr>
-
