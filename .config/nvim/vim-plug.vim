@@ -20,6 +20,9 @@ Plug 'alvan/vim-closetag'
 "Plug 'luochen1990/indent-detector.vim'
 Plug 'tpope/vim-sleuth'
 Plug 'Thyrum/vim-stabs'
+Plug 'lervag/vimtex'
+"Plug 'jiangmiao/auto-pairs'
+Plug 'tmsvg/pear-tree'
 
 call plug#end()
 

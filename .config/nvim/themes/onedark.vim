@@ -4,7 +4,7 @@ if (has("autocmd") && !has("gui_running"))
     autocmd!
     let s:white = { "gui": "#e0d8e4", "cterm": "145", "cterm16" : "7" }
     autocmd ColorScheme * call onedark#set_highlight("Normal", { "fg": s:white }) " `bg` will not be styled since there is no `bg` setting
-	autocmd ColorScheme * call onedark#extend_highlight("Comment", { "fg": { "gui": "grey" }})
+	autocmd ColorScheme * call onedark#extend_highlight("Comment", { "fg": { "gui": "#75a591" }})
 	autocmd ColorScheme * call onedark#extend_highlight("gitcommitComment", { "fg": { "gui": "grey" }})
 	autocmd ColorScheme * call onedark#extend_highlight("Folded", { "fg": { "gui": "grey" }})
 	autocmd ColorScheme * call onedark#extend_highlight("LineNr", { "fg": { "gui": "grey" }})

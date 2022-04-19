@@ -14,6 +14,9 @@
 	// python config
 	"python.linting.enabled": true,
 	"python.linting.pylintEnabled": true,
+	"python.linting.pylintArgs": [
+		"--disable=C0111"
+	],
 	"snippets.ultisnips.directories": [
 		"UltiSnips",
 		"~/.config/nvim/utils/snips"

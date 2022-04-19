@@ -47,10 +47,6 @@ nmap <C-k> <plug>(coc-diagnostic-prev)
 nnoremap   <silent>   <F12>   :FloatermToggle<CR>
 tnoremap   <silent>   <F12>   <C-\><C-n>:FloatermToggle<CR>
 
-inoremap {}<cr> {<cr>}<c-o>O
-inoremap []<cr> [<cr>]<c-o>O
-inoremap ()<cr> (<cr>)<c-o>O
-
 nmap <space>f <Cmd>CocCommand explorer<CR>
 
 nmap <leader>f <Cmd>CocFix<cr>
@@ -58,6 +54,7 @@ nmap <leader>f <Cmd>CocFix<cr>
 nmap <leader>l <Cmd>set list!<cr>
 
 autocmd FileType c,cpp nmap <F5> :term make run<CR>
+autocmd FileType tex nmap <F5> :w<CR> :!pdflatex %<CR>
 
 nmap <C-[> :prev<cr>
 nmap <C-]> :next<cr>

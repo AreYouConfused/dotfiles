@@ -4,9 +4,9 @@ runtime themes/onedark.vim
 runtime keybinds.vim
 
 set number
-set tabstop=4
-set sw=4
-set sts=4
+set tabstop=8
+set sw=8 
+set sts=8
 set path+=**
 set cursorline
 set noshowmode 
