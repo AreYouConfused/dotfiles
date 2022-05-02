@@ -79,6 +79,12 @@ alias youtube-dl='yt-dlp'
 alias config='/usr/bin/git --git-dir=$HOME/.dotfiles --work-tree=$HOME'
 alias se='sudoedit'
 
+# kitty alias section
+if [ "$TERM" = "xterm-kitty" ]; then
+  alias ssh='kitty +kitten ssh'
+  #alias diff='kitty +kitten diff'
+fi
+
 #
 # # ex - archive extractor
 # # usage: ex <file>
