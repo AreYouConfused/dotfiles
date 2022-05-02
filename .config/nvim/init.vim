@@ -34,3 +34,6 @@ function! ResizeSplits()
     wincmd =
 endfunction
 
+autocmd FileType c,cpp nmap <F5> :term make run<CR>
+autocmd FileType tex nmap <F5> :w<CR> :!pdflatex %<CR>
+autocmd FileType tex set spell spelllang=en_us
