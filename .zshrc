@@ -1,9 +1,9 @@
 # Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
 # Initialization code that may require console input (password prompts, [y/n]
 # confirmations, etc.) must go above this block; everything else may go below.
-if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
-  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
-fi
+#if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
+#  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
+#fi
 
 ## Options section
 setopt correct                                                  # Auto correct mistakes
@@ -119,9 +119,10 @@ colors
 setopt prompt_subst
 
 # Prompt (on left side) similar to default bash prompt, or redhat zsh prompt with colors
- # PROMPT="%(!.%{$fg[red]%}[%n@%m %1~]%{$reset_color%}# .%{$fg[green]%}[%n@%m %1~]%{$reset_color%}$ "
+ #PROMPT="%(!.%{$fg[red]%}[%n@%m %1~]%{$reset_color%}# .%{$fg[green]%}[%n@%m %1~]%{$reset_color%}$ "
 # Maia prompt
- PROMPT="%B%{$fg[cyan]%}%(4~|%-1~/.../%2~|%~)%u%b >%{$fg[cyan]%}>%B%(?.%{$fg[cyan]%}.%{$fg[red]%})>%{$reset_color%}%b " 
+ PROMPT="%B%{$fg[green]%}%n$reset_color on $fg[green]%m$reset_color at %(4~|%-1~/.../%2~|%~)%u%b%B
+ %(?.%{$fg[cyan]%}.%{$fg[red]%})->%{$reset_color%}%b " 
 # Print some system information when the shell is first started
 # Print a greeting message when shell is started $USER@$HOST  
 #echo $fg[yellow]$USER$reset_color@$fg[yellow]$HOST$reset_color $(uname -smr)$reset_colors
@@ -188,7 +189,7 @@ git_prompt_string() {
 # Right prompt with exit status of previous command if not successful
  #RPROMPT="%{$fg[red]%} %(?..[%?])" 
 # Right prompt with exit status of previous command marked with ✓ or ✗
- # RPROMPT="%(?.%{$fg[green]%}✓ %{$reset_color%}.%{$fg[red]%}✗ %{$reset_color%})"
+ RPROMPT="%(?.%{$fg[green]%}✓ %{$reset_color%}.%{$fg[red]%}✗ %{$reset_color%})"
 
 
 # Color man pages
@@ -247,7 +248,8 @@ case $(basename "$(cat "/proc/$PPID/comm")") in
     ;;
 esac
 
-source $HOME/.dotfiles/powerlevel10k/powerlevel10k.zsh-theme
+#source $HOME/.dotfiles/powerlevel10k/powerlevel10k.zsh-theme
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
-[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+#[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+
