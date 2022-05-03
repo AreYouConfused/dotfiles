@@ -164,7 +164,7 @@ git_prompt_string() {
   [ -n "$git_where" ] && echo "$GIT_PROMPT_SYMBOL$(parse_git_state)$GIT_PROMPT_PREFIX%{$fg[yellow]%}${git_where#(refs/heads/|tags/)}$GIT_PROMPT_SUFFIX"
   
   # If not inside the Git repo, print exit codes of last command (only if it failed)
-  [ ! -n "$git_where" ] && echo "%{$fg[red]%} %(?..[%?])"
+  #[ ! -n "$git_where" ] && echo "%{$fg[red]%} %(?..[%?])"
 }
 
 # Color man pages
@@ -196,7 +196,7 @@ case $(basename "$(cat "/proc/$PPID/comm")") in
     	alias x='startx ~/.xinitrc'      # Type name of desired desktop after x, xinitrc is configured for it
     ;;
   *)
-        RPROMPT='$(git_prompt_string)'
+        RPROMPT="%{$fg[red]%} %(?..[%?])"
 		# Use autosuggestion
 		source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
 		ZSH_AUTOSUGGEST_BUFFER_MAX_SIZE=20
@@ -204,5 +204,5 @@ case $(basename "$(cat "/proc/$PPID/comm")") in
     ;;
 esac
 
-PROMPT="%{$fg[green]%}%n$reset_color on $fg[green]%m$reset_color at $fg[cyan]%(5~|%-1~/.../%4~|%~) 
-%(?.%{$fg[cyan]%}.%{$fg[red]%})->%{$reset_color%} " 
+PROMPT='%{$fg[green]%}%n$reset_color on $fg[green]%m$reset_color at $fg[cyan]%(5~|%-1~/.../%4~|%~) $(git_prompt_string)
+%(?.%{$fg[cyan]%}.%{$fg[red]%})->%{$reset_color%} '
