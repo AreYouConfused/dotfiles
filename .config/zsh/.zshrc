@@ -61,8 +61,8 @@ alias cp="cp -i"                                                # Confirm before
 alias df='df -h'                                                # Human-readable sizes
 alias free='free -m'                                            # Show sizes in MB
 alias make='make -j'
-alias ls='ls -v --color=auto'
-alias ll='ls -AlhF --color=auto'
+alias ls='ls -vtr --color=auto'
+alias ll='ls -AltrhF --color=auto'
 alias vpn='nordvpn connect'
 alias cvpn='nordvpn disconnect'
 alias cb='xclip -selection clipboard'
