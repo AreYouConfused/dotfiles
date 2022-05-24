@@ -189,7 +189,6 @@ screens = [
                     name_transform=lambda name: name.upper(),
                 ),
                 widget.Clock(format="%Y-%m-%d %a %I:%M %p"),
-                widget.QuickExit(),
             ],
             24,
         ),
