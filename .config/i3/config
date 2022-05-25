@@ -33,9 +33,11 @@ bindsym $alt+Control+l exec light-locker-command -l
 exec --no-startup-id nm-applet
 exec --no-startup-id picom --experimental-backends
 exec --no-startup-id dunst
+exec --no-startup-id keepassxc
+exec --no-startup-id kdeconnect-indicator
 exec --no-startup-id xmodmap ~/.Xmodmap
-exec --no-startup-id bash -c "if ( DISPLAY=:0 xinput list | grep -i 'Logitech G502' > /dev/null ); then DISPLAY=:0 xinput --set-prop 'pointer:Logitech G502' 'libinput Accel Profile Enabled' 0 1 && DISPLAY=:0 xinput --set-prop 'pointer:Logitech G502' 'libinput Accel Speed' -0.4 ; fi"
 exec --no-startup-id setxkbmap -option compose:ralt
+exec --no-startup-id bash -c "if ( DISPLAY=:0 xinput list | grep -i 'Logitech G502' > /dev/null ); then DISPLAY=:0 xinput --set-prop 'pointer:Logitech G502' 'libinput Accel Profile Enabled' 0 1 && DISPLAY=:0 xinput --set-prop 'pointer:Logitech G502' 'libinput Accel Speed' -0.4 ; fi"
 
 set $refresh_i3blocks pkill -RTMIN+1 i3blocks
 bindsym XF86AudioRaiseVolume exec --no-startup-id pamixer -i 2 && $refresh_i3blocks
@@ -53,10 +55,11 @@ floating_modifier $super
 # start a terminal
 bindsym $super+Return exec kitty
 
-bindsym $super+e exec dolphin
+bindsym $alt+1 exec firefox
+bindsym $alt+2 exec dolphin
 
 # kill focused window
-bindsym $super+Shift+q kill
+bindsym $alt+Shift+q kill
 
 # start dmenu (a program launcher)
 bindsym $alt+space exec --no-startup-id "rofi -modi drun, run -show drun"
@@ -99,7 +102,7 @@ bindsym $super+f fullscreen toggle
 # change container layout (stacked, tabbed, toggle split)
 bindsym $super+s layout stacking
 bindsym $super+w layout tabbed
-bindsym $super+shift+s layout toggle split
+bindsym $super+e layout toggle split
 
 # toggle tiling / floating
 bindsym $super+Shift+space floating toggle
@@ -164,7 +167,8 @@ bindsym $super+Shift+c reload
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
 bindsym $super+Shift+r restart
 # exit i3 (logs you out of your X session)
-bindsym $super+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -B 'Yes, exit i3' 'i3-msg exit'"
+#bindsym $super+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -B 'Yes, exit i3' 'i3-msg exit'"
+bindsym $super+Shift+e exec ~/.local/bin/powermenu
 
 # resize window (you can also use the mouse for that)
 mode "resize" {
@@ -201,9 +205,10 @@ bar {
 }
 
 gaps inner 8
-gaps outer 10
+gaps outer 8
 smart_gaps inverse_outer
 
 default_border pixel
 
 for_window [class="KeePassXC"] floating enable
+for_window [class="steam_app_*"] move container to workspace $ws10
