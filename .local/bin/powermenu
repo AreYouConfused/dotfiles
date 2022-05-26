@@ -1,10 +1,11 @@
 #! /bin/sh
 
-chosen=$(printf "  Lock\n  Logout\n  Restart\n  Power Off\n" | rofi -dmenu -i)
+chosen=$(printf "  Lock\n  Logout\n  Hibernate\n  Restart\n  Power Off\n" | rofi -dmenu -i)
 
 case "$chosen" in
 	"  Power Off") poweroff ;;
 	"  Restart") reboot ;;
+	"  Hibernate") systectl Hibernate ;;
 	"  Lock") light-locker-command -l ;;
 	"  Logout") i3-msg exit ;;
 	*) exit 1 ;;
