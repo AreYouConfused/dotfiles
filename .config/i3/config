@@ -53,6 +53,9 @@ bindsym XF86AudioPlay exec --no-startup-id playerctl play-pause && $refresh_i3bl
 bindsym XF86AudioNext exec --no-startup-id playerctl next && $refresh_i3blocks_media
 bindsym XF86AudioPrev exec --no-startup-id playerctl previous && $refresh_i3blocks_media
 
+bindsym XF86MonBrightnessUp exec --no-startup-id brightnessctl s +5%
+bindsym XF86MonBrightnessDown exec --no-startup-id brightnessctl s 5%-
+
 # Use Mouse+$super to drag floating windows to their wanted position
 floating_modifier $super
 
