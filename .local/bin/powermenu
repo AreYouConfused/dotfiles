@@ -5,7 +5,7 @@ chosen=$(printf "  Lock\n  Logout\n  Hibernate\n  Restart\n  Powe
 case "$chosen" in
 	"  Power Off") poweroff ;;
 	"  Restart") reboot ;;
-	"  Hibernate") systectl Hibernate ;;
+	"  Hibernate") systemctl hibernate ;;
 	"  Lock") light-locker-command -l ;;
 	"  Logout") i3-msg exit ;;
 	*) exit 1 ;;
