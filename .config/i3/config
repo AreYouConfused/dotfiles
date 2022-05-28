@@ -37,6 +37,7 @@ exec --no-startup-id xss-lock --transfer-sleep-lock -- light-locker-command -l
 exec --no-startup-id nm-applet
 exec --no-startup-id picom --experimental-backends
 exec --no-startup-id dunst
+exec --no-startup-id blueman-applet
 exec --no-startup-id keepassxc
 exec --no-startup-id kdeconnect-indicator
 exec --no-startup-id xmodmap -e "clear lock"
