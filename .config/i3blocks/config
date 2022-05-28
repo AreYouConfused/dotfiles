@@ -62,13 +62,6 @@ instance=swap
 #separator=true
 interval=30
 
-#
-# If the instance is not specified, use the interface used for default route. The address can be forced to IPv4 or IPv6 with -4 or -6 switches. [iface]
-#IFACE=wlan0
-#color=#00FF00
-#interval=10
-#separator=false
-
 [wifi]
 INTERFACE=wlp3s0
 label=wifi:
@@ -96,10 +89,11 @@ interval=10
 # Battery indicator
 #
 # The battery instance defaults to 0.
-#[battery]
-#label=BAT
+[battery2]
+#label=BAT 
 #label=⚡
-#interval=30
+interval=30
+markup=pango
 
 # Date Time
 #
