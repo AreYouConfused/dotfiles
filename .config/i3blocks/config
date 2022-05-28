@@ -68,14 +68,16 @@ interval=10
 
 [ssid]
 INTERFACE=wlp59s0
-interval=60
+interval=once
 separator=false
+signal=3
 
 [wifi]
 INTERFACE=wlp59s0
 #label=wifi:
 interval=10
 separator=false
+signal=3
 
 [iface]
 #LABEL=wlan0:
@@ -85,6 +87,7 @@ color=#00FF00
 interval=10
 # set this to 1 to display the name of the connected WIFI interface instead of the IP address.
 display_wifi_name=0
+signal=3
 
 
 # Battery indicator

@@ -393,6 +393,10 @@
     script = ~/.config/dunst/dunst-spot.sh
     history_ignore = yes
 
+[network-manager]
+    desktop_entry = nm-applet
+    script = ~/.config/dunst/dunst-net.sh
+
 #[espeak]
 #    summary = "*"
 #    script = dunst_espeak.sh
