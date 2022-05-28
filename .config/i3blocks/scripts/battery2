@@ -8,9 +8,13 @@
 from subprocess import check_output
 import os
 import re
+import glob
 
 config = dict(os.environ)
 status = check_output(['acpi'], universal_newlines=True)
+
+if not glob.glob("/sys/class/power_supply/BAT*"):
+    exit(0)
 
 if not status:
     # stands for no battery found
