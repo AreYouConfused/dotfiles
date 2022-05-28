@@ -3,15 +3,15 @@
 
 set -a
 
-AUDIO_HIGH_SYMBOL=${AUDIO_HIGH_SYMBOL:-'  '}
+AUDIO_HIGH_SYMBOL=${AUDIO_HIGH_SYMBOL:-' '}
 
 AUDIO_MED_THRESH=${AUDIO_MED_THRESH:-50}
-AUDIO_MED_SYMBOL=${AUDIO_MED_SYMBOL:-'  '}
+AUDIO_MED_SYMBOL=${AUDIO_MED_SYMBOL:-' '}
 
 AUDIO_LOW_THRESH=${AUDIO_LOW_THRESH:-0}
-AUDIO_LOW_SYMBOL=${AUDIO_LOW_SYMBOL:-'  '}
+AUDIO_LOW_SYMBOL=${AUDIO_LOW_SYMBOL:-' '}
 
-AUDIO_MUTED_SYMBOL=${AUDIO_MUTED_SYMBOL:-'  '}
+AUDIO_MUTED_SYMBOL=${AUDIO_MUTED_SYMBOL:-' '}
 
 AUDIO_DELTA=${AUDIO_DELTA:-5}
 
@@ -140,7 +140,20 @@ sed 's/.*= "\(.*\)".*/\1/')
         NAME=${DESCRIPTION:-$NAME}
     fi
 
-    if [[ $MUTED =~ "no" ]] ; then
+    if [[ $ACTIVE = "" ]] ; then
+        DESCRIPTION=$(pamixer --get-default-sink | tail -1 | awk -v FS=' "' '{print $3}' | awk -v FS='"' '{print $1}')
+        NAME=${DESCRIPTION:-$NAME}
+        VOL=$(pamixer --get-volume)
+        MUTED=$(pamixer --get-mute)
+        SYMB=$AUDIO_HIGH_SYMBOL
+        [[ $VOL -le $AUDIO_MED_THRESH ]] && SYMB=$AUDIO_MED_SYMBOL
+        [[ $VOL -le $AUDIO_LOW_THRESH ]] && SYMB=$AUDIO_LOW_SYMBOL
+
+        COLOR='#ffffff'
+        #COLOR='#222225'
+    fi
+
+    if [[ $MUTED =~ "no" ]] || [[ $MUTED =~ "false" ]] ; then
         SYMB=$AUDIO_HIGH_SYMBOL
         [[ $VOL -le $AUDIO_MED_THRESH ]] && SYMB=$AUDIO_MED_SYMBOL
         [[ $VOL -le $AUDIO_LOW_THRESH ]] && SYMB=$AUDIO_LOW_SYMBOL
@@ -150,16 +163,13 @@ sed 's/.*= "\(.*\)".*/\1/')
         COLOR=$MUTED_COLOR
     fi
 
-    if [[ $ACTIVE = "" ]] ; then
-        echo "Sound inactive"
-        COLOR='#222225'
-    fi
 
     if [[ $SUBSCRIBE == 1 ]] ; then
         print_format "$LONG_FORMAT"
     else
         print_format "$LONG_FORMAT"
         print_format "$SHORT_FORMAT"
+
         echo "$COLOR"
     fi
 }
