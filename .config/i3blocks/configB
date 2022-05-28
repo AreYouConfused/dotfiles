@@ -3,5 +3,5 @@ separator_block_width=15
 markup=none
 
 [time]
-command=date '+%H:%M  ' 
+command=date '+%H:%M '
 interval=5
