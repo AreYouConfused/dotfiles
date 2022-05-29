@@ -396,6 +396,7 @@
 [network-manager]
     desktop_entry = nm-applet
     script = ~/.config/dunst/dunst-net.sh
+    skip_display = yes
 
 #[espeak]
 #    summary = "*"
