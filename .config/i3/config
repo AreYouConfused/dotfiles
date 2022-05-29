@@ -213,13 +213,18 @@ mode "resize" {
 bindsym $super+r mode "resize"
 
 default_border pixel 4
-
-for_window [class="KeePassXC"] floating enable
-for_window [class="steam_app_*"] move container to workspace $ws10
-
 gaps inner 8
 gaps outer 8
 smart_gaps inverse_outer
+
+#####
+#
+# window rules
+#
+#####
+for_window [class="KeePassXC"] floating enable
+for_window [class="steam_app_*"] move container to workspace $ws10
+for_window [class="(?i)Firefox" window_role="(?i)page-info"] floating enable
 
 # class                 border  bground text    indicator child_border
 client.focused          #6272A4 #6272A4 #F8F8F2 #72a361   #6272A4
