@@ -73,7 +73,6 @@ separator=false
 signal=3
 
 [wifi]
-INTERFACE=wlp59s0
 #label=wifi:
 interval=10
 separator=false
