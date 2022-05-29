@@ -98,6 +98,7 @@ signal=3
 #label=⚡
 interval=30
 markup=pango
+signal=4
 
 # Date Time
 #

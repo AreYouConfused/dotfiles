@@ -5,7 +5,7 @@
 #
 # A battery indicator blocklet script for i3blocks
 
-from subprocess import check_output
+from subprocess import check_output, Popen
 import os
 import re
 import glob
@@ -79,6 +79,8 @@ else:
     elif state == "Unknown":
         fulltext = FA_QUESTION + " " + FA_BATTERY + " "
         timeleft = ""
+        Popen(
+            ["/usr/bin/bash", "-c", "sleep 3 && pkill -RTMIN+4 i3blocks"])
     else:
         fulltext = FA_LIGHTNING + " " + FA_PLUG + " "
 
