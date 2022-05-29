@@ -14,8 +14,9 @@
 # You should have received a copy of the GNU General Public License
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
-load="$(cut -d ' ' -f1 /proc/loadavg)"
+load="$(cut -d ' ' -f1-3 /proc/loadavg)"
 cpus="$(nproc)"
+min1=$(echo $load | awk '{print $1}')
 
 # full text
 echo "$load"
@@ -24,7 +25,7 @@ echo "$load"
 echo "$load"
 
 # color if load is too high
-awk -v cpus=$cpus -v cpuload=$load '
+awk -v cpus=$cpus -v cpuload=$min1 '
     BEGIN {
         if (cpus <= cpuload) {
             print "#FF0000";
