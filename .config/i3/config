@@ -228,6 +228,7 @@ hide_edge_borders none
 for_window [class="KeePassXC"] floating enable
 for_window [class="steam_app_*"] move container to workspace $ws10
 for_window [class="(?i)Firefox" window_role="(?i)page-info"] floating enable
+for_window [class="(?i)steam" title="(?i)Steam - Self Updater"] floating enable
 
 # class                 border  bground text    indicator child_border
 client.focused          #6272A4 #6272A4 #F8F8F2 #72a361   #6272A4
