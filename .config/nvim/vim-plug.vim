@@ -23,6 +23,7 @@ Plug 'Thyrum/vim-stabs'
 Plug 'lervag/vimtex'
 "Plug 'jiangmiao/auto-pairs'
 Plug 'tmsvg/pear-tree'
+Plug 'dracula/vim', { 'as': 'dracula' }
 
 call plug#end()
 

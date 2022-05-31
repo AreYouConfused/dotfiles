@@ -2,6 +2,8 @@ runtime vim-plug.vim
 runtime coc.vim
 runtime themes/onedark.vim
 runtime keybinds.vim
+colorscheme dracula
+let g:airline_theme = 'dracula'
 
 set number
 set tabstop=8
