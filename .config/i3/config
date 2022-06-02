@@ -142,8 +142,28 @@ set $ws7 "7"
 set $ws8 "8"
 set $ws9 "9"
 set $ws10 "10"
+set $ws11 "11:F1"
+set $ws12 "12:F2"
+set $ws13 "13:F3"
+set $ws14 "14:F4"
+set $ws15 "15:F5"
+set $ws16 "16:F6"
+set $ws17 "17:F7"
+set $ws18 "18:F8"
+set $ws19 "19:F9"
+set $ws20 "20:F10"
+set $ws21 "21:F11"
+set $ws22 "22:F12"
 
 workspace $ws1 output primary
+workspace $ws2 output primary
+workspace $ws3 output primary
+workspace $ws4 output primary
+workspace $ws5 output primary
+workspace $ws6 output primary
+workspace $ws7 output primary
+workspace $ws8 output primary
+workspace $ws9 output primary
 workspace $ws10 output primary
 workspace_auto_back_and_forth yes
 
@@ -158,6 +178,18 @@ bindsym $super+7 workspace number $ws7
 bindsym $super+8 workspace number $ws8
 bindsym $super+9 workspace number $ws9
 bindsym $super+0 workspace number $ws10
+bindsym $super+F1 workspace number $ws11
+bindsym $super+F2 workspace number $ws12
+bindsym $super+F3 workspace number $ws13
+bindsym $super+F4 workspace number $ws14
+bindsym $super+F5 workspace number $ws15
+bindsym $super+F6 workspace number $ws16
+bindsym $super+F7 workspace number $ws17
+bindsym $super+F8 workspace number $ws18
+bindsym $super+F9 workspace number $ws19
+bindsym $super+F10 workspace number $ws20
+bindsym $super+F11 workspace number $ws21
+bindsym $super+F12 workspace number $ws22
 
 # move focused container to workspace
 bindsym $super+Shift+1 move container to workspace number $ws1
@@ -170,6 +202,18 @@ bindsym $super+Shift+7 move container to workspace number $ws7
 bindsym $super+Shift+8 move container to workspace number $ws8
 bindsym $super+Shift+9 move container to workspace number $ws9
 bindsym $super+Shift+0 move container to workspace number $ws10
+bindsym $super+Shift+F1 move container to workspace number $ws11
+bindsym $super+Shift+F2 move container to workspace number $ws12
+bindsym $super+Shift+F3 move container to workspace number $ws13
+bindsym $super+Shift+F4 move container to workspace number $ws14
+bindsym $super+Shift+F5 move container to workspace number $ws15
+bindsym $super+Shift+F6 move container to workspace number $ws16
+bindsym $super+Shift+F7 move container to workspace number $ws17
+bindsym $super+Shift+F8 move container to workspace number $ws18
+bindsym $super+Shift+F9 move container to workspace number $ws19
+bindsym $super+Shift+F10 move container to workspace number $ws20
+bindsym $super+Shift+F11 move container to workspace number $ws21
+bindsym $super+Shift+F12 move container to workspace number $ws22
 
 # move workspace to screens
 bindsym $super+Control+h move workspace to output left
@@ -219,7 +263,6 @@ gaps outer 4
 #smart_gaps inverse_outer
 hide_edge_borders none
 
-
 #####
 #
 # window rules
@@ -231,7 +274,7 @@ for_window [class="(?i)Firefox" window_role="(?i)page-info"] floating enable
 for_window [class="(?i)steam" title="(?i)Steam - Self Updater"] floating enable
 
 # class                 border  bground text    indicator child_border
-client.focused          #6272A4 #6272A4 #F8F8F2 #72a361   #6272A4
+client.focused          #6272A4 #6272A4 #F8F8F2 #bd93f9   #6272A4
 client.focused_inactive #44475A #44475A #F8F8F2 #44475A   #44475A
 client.unfocused        #282A36 #282A36 #BFBFBF #282A36   #282A36
 client.urgent           #44475A #FF5555 #F8F8F2 #FF5555   #FF5555
