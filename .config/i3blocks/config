@@ -105,6 +105,9 @@ signal=4
 command=date '+%a %Y-%m-%d %H:%M'
 interval=5
 
+[updates]
+interval=3600
+
 [dunst]
 interval=once
 format=json

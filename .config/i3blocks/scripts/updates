@@ -1,0 +1,15 @@
+#!/bin/sh
+
+pacmanupdates=$(checkupdates | wc -l)
+aurupdates=$(yay -Qum | wc -l)
+count=$(($pacmanupdates + $aurupdates))
+
+if [ $count -gt 100 ]; then
+	echo "$count updates"
+	exit 33
+elif [ $count -gt 0 ]; then
+	echo "$count updates"
+else
+	echo ""
+fi
+
