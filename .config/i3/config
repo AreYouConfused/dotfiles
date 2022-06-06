@@ -268,6 +268,7 @@ hide_edge_borders none
 #
 #####
 for_window [class="KeePassXC"] floating enable
+for_window [class="k_checkupdates"] floating enable
 for_window [class="steam_app_*"] move container to workspace $ws10
 for_window [class="(?i)Firefox" window_role="(?i)page-info"] floating enable
 for_window [class="(?i)kcalc"] floating enable

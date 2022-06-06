@@ -106,7 +106,7 @@ command=date '+%a %Y-%m-%d %H:%M'
 interval=5
 
 [updates]
-interval=3600
+interval=1800
 
 [dunst]
 interval=once

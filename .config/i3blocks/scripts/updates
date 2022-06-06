@@ -13,3 +13,7 @@ else
 	echo ""
 fi
 
+case "$BLOCK_BUTTON" in
+	1) kitty --class k_checkupdates --hold sh -c "checkupdates; /usr/bin/yay -Qum"
+esac
+
