@@ -112,4 +112,6 @@ interval=1800
 interval=once
 format=json
 markup=pango
+min_width=20
+align=center
 

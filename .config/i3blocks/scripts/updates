@@ -1,8 +1,11 @@
 #!/bin/sh
 
-pacmanupdates=$(checkupdates | wc -l)
-aurupdates=$(yay -Qum | wc -l)
-count=$(($pacmanupdates + $aurupdates))
+pacmanupdates=$(checkupdates)
+aurupdates=$(yay -Qum)
+
+pcount=$(echo "$pacmanupdates" | wc -l)
+aurcount=$(echo "$aurupdates" | wc -l)
+count=$(($pcount + $aurcount))
 
 if [ $count -gt 100 ]; then
 	echo "$count updates"
@@ -14,6 +17,6 @@ else
 fi
 
 case "$BLOCK_BUTTON" in
-	1) kitty --class k_checkupdates --hold sh -c "checkupdates; /usr/bin/yay -Qum"
+	1) kitty --class k_checkupdates --hold sh -c "echo -e '$pacmanupdates\n$aurupdates'"
 esac
 
