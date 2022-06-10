@@ -268,9 +268,9 @@ title_align center
 # window rules
 #
 #####
+
 for_window [class="KeePassXC"] floating enable
 for_window [class="k_checkupdates"] floating enable
-for_window [class="steam_app_*"] move container to workspace $ws10
 for_window [class="(?i)Firefox" window_role="(?i)page-info"] floating enable
 for_window [class="(?i)kcalc"] floating enable
 
@@ -284,6 +284,9 @@ for_window [class="^Steam$" title="^Steam - Self Updater$"] floating enable
 for_window [class="^Steam$" title="^Screenshot Uploader$"] floating enable
 for_window [class="^Steam$" title="^Steam Guard - Computer Authorization Required$"] floating enable
 for_window [title="^Steam Keyboard$"] floating enable
+
+assign [class="(?i)mindustry"] $ws10
+for_window [class="steam_app_960090"] move --no-auto-back-and-forth window to workspace $ws10
 
 # class                 border  bground text    indicator child_border
 client.focused          #6272A4 #6272A4 #F8F8F2 #bd93f9   #6272A4
