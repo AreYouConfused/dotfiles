@@ -14,7 +14,7 @@ set $alt Mod1
 
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
-font pango:fira code regular 11
+font pango:Noto Sans Regular 11
 
 # This font is widely installed, provides lots of unicode glyphs, right-to-left
 # text rendering and scalability on retina/hidpi displays (thanks to pango).
@@ -44,7 +44,7 @@ exec --no-startup-id setxkbmap -option caps:escape_shifted_capslock
 exec --no-startup-id bash -c "if ( DISPLAY=:0 xinput list | grep -i 'Logitech G502' > /dev/null ); then DISPLAY=:0 xinput --set-prop 'pointer:Logitech G502' 'libinput Accel Profile Enabled' 0 1 && DISPLAY=:0 xinput --set-prop 'pointer:Logitech G502' 'libinput Accel Speed' -0.4 ; fi"
 exec --no-startup-id flameshot
 exec --no-startup-id steam-runtime -silent
-exec_always --no-startup-id autotiling
+# exec_always --no-startup-id autotiling
 
 # exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 
@@ -256,11 +256,12 @@ mode "resize" {
 
 bindsym $super+r mode "resize"
 
-default_border pixel 2
-gaps inner 8
-gaps outer 4
+default_border normal 2
+#gaps inner 8
+#gaps outer 4
 #smart_gaps inverse_outer
 hide_edge_borders none
+title_align center
 
 #####
 #
@@ -305,7 +306,7 @@ bar {
                 statusline #F8F8F2
                 separator  #a0a0a0
 
-                focused_workspace  #6272A4 #54628c #F8F8F2
+                focused_workspace  #6272A4 #6272A4 #F8F8F2
                 active_workspace   #6272A4 #44475A #F8F8F2
                 inactive_workspace #282A36 #282A36 #BFBFBF
                 urgent_workspace   #FF5555 #FF5555 #F8F8F2
@@ -325,7 +326,7 @@ bar {
                 statusline #F8F8F2
                 separator  #a0a0a0
 
-                focused_workspace  #6272A4 #54628c #F8F8F2
+                focused_workspace  #6272A4 #6272A4 #F8F8F2
                 active_workspace   #6272A4 #44475A #F8F8F2
                 inactive_workspace #282A36 #282A36 #BFBFBF
                 urgent_workspace   #FF5555 #FF5555 #F8F8F2

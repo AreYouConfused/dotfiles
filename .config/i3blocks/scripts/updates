@@ -7,6 +7,10 @@ pcount=$(echo "$pacmanupdates" | wc -l)
 aurcount=$(echo "$aurupdates" | wc -l)
 count=$(($pcount + $aurcount))
 
+case "$BLOCK_BUTTON" in
+	1) kitty --class k_checkupdates --hold sh -c "echo -e '$pacmanupdates\n$aurupdates'"
+esac
+
 if [ $count -gt 100 ]; then
 	echo "$count updates"
 	exit 33
@@ -15,8 +19,4 @@ elif [ $count -gt 0 ]; then
 else
 	echo ""
 fi
-
-case "$BLOCK_BUTTON" in
-	1) kitty --class k_checkupdates --hold sh -c "echo -e '$pacmanupdates\n$aurupdates'"
-esac
 
