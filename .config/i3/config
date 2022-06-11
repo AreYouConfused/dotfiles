@@ -48,6 +48,19 @@ exec --no-startup-id steam-runtime -silent
 
 # exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 
+exec --no-startup-id spotify --disable-smooth-scrolling
+for_window [class="(?i)Spotify"] move scratchpad
+mode scratch {
+        bindsym F9 [class="(?i)Spotify"] scratchpad show ; mode Spotify
+        bindsym Escape mode default
+}
+
+mode Spotify {
+        bindsym F9 [class="(?i)Spotify"] scratchpad show ; mode default
+        bindsym Escape mode default
+}
+bindsym Multi_key mode scratch
+
 set $refresh_i3blocks pkill -RTMIN+1 i3blocks
 bindsym XF86AudioRaiseVolume exec --no-startup-id pamixer -i 2 && $refresh_i3blocks
 bindsym XF86AudioLowerVolume exec --no-startup-id pamixer -d 2 && $refresh_i3blocks
