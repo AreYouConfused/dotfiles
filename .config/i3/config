@@ -155,16 +155,10 @@ set $ws21 "21:F11"
 set $ws22 "22:F12"
 
 workspace $ws1 output primary
-workspace $ws2 output primary
-workspace $ws3 output primary
-workspace $ws4 output primary
-workspace $ws5 output primary
-workspace $ws6 output primary
-workspace $ws7 output primary
-workspace $ws8 output primary
-workspace $ws9 output primary
 workspace $ws10 output primary
 workspace_auto_back_and_forth yes
+# set the starting workspace on non primary screeens
+exec --no-startup-id ~/.config/i3/extrascreens.sh $ws11 $ws12 $ws13 $ws14 $ws15
 
 # switch to workspace
 bindsym $super+1 workspace number $ws1
