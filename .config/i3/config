@@ -39,14 +39,19 @@ exec --no-startup-id dunst
 exec --no-startup-id blueman-applet
 exec --no-startup-id keepassxc
 exec --no-startup-id kdeconnect-indicator
-exec --no-startup-id setxkbmap -option compose:ralt
-exec --no-startup-id setxkbmap -option caps:escape_shifted_capslock
+exec --no-startup-id setxkbmap -option compose:ralt -option caps:escape_shifted_capslock
 exec --no-startup-id bash -c "if ( DISPLAY=:0 xinput list | grep -i 'Logitech G502' > /dev/null ); then DISPLAY=:0 xinput --set-prop 'pointer:Logitech G502' 'libinput Accel Profile Enabled' 0 1 && DISPLAY=:0 xinput --set-prop 'pointer:Logitech G502' 'libinput Accel Speed' -0.4 ; fi"
 exec --no-startup-id flameshot
 exec --no-startup-id steam-runtime -silent
 # exec_always --no-startup-id autotiling
 
 # exec_always --no-startup-id $HOME/.config/polybar/launch.sh
+exec --no-startup-id spotify --disable-smooth-scrolling
+exec --no-startup-id kitty --class kitty_scratch --watcher ~/.config/kitty/kitty_scratch.py
+for_window [class="(?i)Spotify"] move scratchpad
+for_window [class="kitty_scratch"] move scratchpad
+bindsym $super+F9 [class="(?i)Spotify"] scratchpad show
+bindsym $super+F12 [class="kitty_scratch"] scratchpad show
 
 exec --no-startup-id spotify --disable-smooth-scrolling
 for_window [class="(?i)Spotify"] move scratchpad
@@ -162,10 +167,6 @@ set $ws15 "15:F5"
 set $ws16 "16:F6"
 set $ws17 "17:F7"
 set $ws18 "18:F8"
-set $ws19 "19:F9"
-set $ws20 "20:F10"
-set $ws21 "21:F11"
-set $ws22 "22:F12"
 
 workspace $ws1 output primary
 workspace $ws2 output primary
@@ -198,10 +199,6 @@ bindsym $super+F5 workspace number $ws15
 bindsym $super+F6 workspace number $ws16
 bindsym $super+F7 workspace number $ws17
 bindsym $super+F8 workspace number $ws18
-bindsym $super+F9 workspace number $ws19
-bindsym $super+F10 workspace number $ws20
-bindsym $super+F11 workspace number $ws21
-bindsym $super+F12 workspace number $ws22
 
 # move focused container to workspace
 bindsym $super+Shift+1 move container to workspace number $ws1
@@ -222,10 +219,6 @@ bindsym $super+Shift+F5 move container to workspace number $ws15
 bindsym $super+Shift+F6 move container to workspace number $ws16
 bindsym $super+Shift+F7 move container to workspace number $ws17
 bindsym $super+Shift+F8 move container to workspace number $ws18
-bindsym $super+Shift+F9 move container to workspace number $ws19
-bindsym $super+Shift+F10 move container to workspace number $ws20
-bindsym $super+Shift+F11 move container to workspace number $ws21
-bindsym $super+Shift+F12 move container to workspace number $ws22
 
 # move workspace to screens
 bindsym $super+Control+h move workspace to output left
