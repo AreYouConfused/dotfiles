@@ -53,19 +53,6 @@ for_window [class="kitty_scratch"] move scratchpad
 bindsym $super+F9 [class="(?i)Spotify"] scratchpad show
 bindsym $super+F12 [class="kitty_scratch"] scratchpad show
 
-exec --no-startup-id spotify --disable-smooth-scrolling
-for_window [class="(?i)Spotify"] move scratchpad
-mode scratch {
-        bindsym F9 [class="(?i)Spotify"] scratchpad show ; mode Spotify
-        bindsym Escape mode default
-}
-
-mode Spotify {
-        bindsym F9 [class="(?i)Spotify"] scratchpad show ; mode default
-        bindsym Escape mode default
-}
-bindsym Multi_key mode scratch
-
 set $refresh_i3blocks pkill -RTMIN+1 i3blocks
 bindsym XF86AudioRaiseVolume exec --no-startup-id pamixer -i 2 && $refresh_i3blocks
 bindsym XF86AudioLowerVolume exec --no-startup-id pamixer -d 2 && $refresh_i3blocks
@@ -169,14 +156,6 @@ set $ws17 "17:F7"
 set $ws18 "18:F8"
 
 workspace $ws1 output primary
-workspace $ws2 output primary
-workspace $ws3 output primary
-workspace $ws4 output primary
-workspace $ws5 output primary
-workspace $ws6 output primary
-workspace $ws7 output primary
-workspace $ws8 output primary
-workspace $ws9 output primary
 workspace $ws10 output primary
 workspace_auto_back_and_forth yes
 
