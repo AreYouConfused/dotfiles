@@ -3,8 +3,8 @@
 pacmanupdates=$(checkupdates)
 aurupdates=$(yay -Qum)
 
-pcount=$(echo "$pacmanupdates" | wc -l)
-aurcount=$(echo "$aurupdates" | wc -l)
+pcount=$(checkupdates | wc -l)
+aurcount=$(yay -Qum | wc -l)
 count=$(($pcount + $aurcount))
 
 case "$BLOCK_BUTTON" in
