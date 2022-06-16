@@ -39,11 +39,12 @@ exec --no-startup-id dunst
 exec --no-startup-id blueman-applet
 exec --no-startup-id keepassxc
 exec --no-startup-id kdeconnect-indicator
-exec --no-startup-id setxkbmap -option compose:ralt -option caps:escape_shifted_capslock
+exec_always --no-startup-id setxkbmap -option compose:ralt -option caps:escape_shifted_capslock
 exec --no-startup-id bash -c "if ( DISPLAY=:0 xinput list | grep -i 'Logitech G502' > /dev/null ); then DISPLAY=:0 xinput --set-prop 'pointer:Logitech G502' 'libinput Accel Profile Enabled' 0 1 && DISPLAY=:0 xinput --set-prop 'pointer:Logitech G502' 'libinput Accel Speed' -0.4 ; fi"
 exec --no-startup-id flameshot
 exec --no-startup-id steam-runtime -silent
 # exec_always --no-startup-id autotiling
+exec_always --no-startup-id nitrogen --restore
 
 # exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 exec --no-startup-id spotify --disable-smooth-scrolling
