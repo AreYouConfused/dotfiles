@@ -78,7 +78,7 @@ bindsym $alt+2 exec dolphin
 
 bindsym $super+Shift+s exec flameshot gui
 # kill focused window
-bindsym $alt+Shift+q kill
+bindsym $super+Shift+x kill
 
 # start dmenu (a program launcher)
 bindsym $alt+space exec --no-startup-id "rofi -modi drun, run -show drun"
