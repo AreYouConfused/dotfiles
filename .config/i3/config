@@ -76,7 +76,8 @@ bindsym $super+Return exec kitty
 bindsym $alt+1 exec firefox
 bindsym $alt+2 exec dolphin
 
-bindsym Print exec flameshot gui
+bindsym Print exec flameshot screen -c
+bindsym $super+Shift+s exec flameshot gui
 # kill focused window
 bindsym $super+Shift+x kill
 
