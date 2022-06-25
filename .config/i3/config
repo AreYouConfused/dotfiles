@@ -82,7 +82,7 @@ bindsym $super+Shift+s exec flameshot gui
 bindsym $super+Shift+x kill
 
 # start dmenu (a program launcher)
-bindsym $alt+space exec --no-startup-id "rofi -modi drun, run -show drun"
+bindsym $alt+space exec --no-startup-id "rofi -modi drun, run -show-icons -show drun"
 # A more modern dmenu replacement is rofi:
 # bindcode $super+40 exec "rofi -modi drun,run -show drun"
 # There also is i3-dmenu-desktop which only displays applications shipping a
@@ -261,6 +261,7 @@ for_window [class="KeePassXC"] floating enable
 for_window [class="k_checkupdates"] floating enable
 for_window [class="(?i)Firefox" window_role="(?i)page-info"] floating enable
 for_window [class="(?i)kcalc"] floating enable
+for_window [class="flameshot"] floating enable
 
 for_window [class="^Steam$" title="^Friends List.*$"] floating enable
 for_window [class="^Steam$" title="Steam - News"] floating enable
