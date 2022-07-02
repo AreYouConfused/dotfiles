@@ -52,7 +52,7 @@ exec --no-startup-id kitty --class kitty_scratch --watcher ~/.config/kitty/kitty
 for_window [class="(?i)Spotify"] move scratchpad
 for_window [class="kitty_scratch"] move scratchpad
 bindsym $super+F9 [class="(?i)Spotify"] scratchpad show
-bindsym $super+F12 [class="kitty_scratch"] scratchpad show
+bindsym $super+F12 exec --no-startup-id i3-dd-term
 
 set $refresh_i3blocks pkill -RTMIN+1 i3blocks
 bindsym XF86AudioRaiseVolume exec --no-startup-id pamixer -i 2 && $refresh_i3blocks
@@ -274,6 +274,7 @@ for_window [class="^Steam$" title="^Screenshot Uploader$"] floating enable
 for_window [class="^Steam$" title="^Steam Guard - Computer Authorization Required$"] floating enable
 for_window [title="^Steam Keyboard$"] floating enable
 
+assign [class="(?i)discord"] $ws12
 assign [class="(?i)mindustry"] $ws10
 for_window [class="steam_app_960090"] move --no-auto-back-and-forth window to workspace $ws10
 
