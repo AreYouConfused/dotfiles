@@ -1,0 +1,30 @@
+#!/bin/bash
+
+if [ $# -ne 1 ]; then 
+	echo needs 1 args, classname
+	exit 29
+fi
+
+if !(xdotool search --class $1)
+then
+	case "$1" in	
+		"kitty_scratch")
+			kitty --class kitty_scratch --detach && 
+			until i3-msg '[class="kitty_scratch"]' scratchpad show ; do sleep 0.1 ; done
+			;;
+		"Spotify")
+			i3-msg exec spotify &&
+			until i3-msg '[class="(?i)Spotify"]' scratchpad show ; do sleep 0.1 ; done
+			;;
+	esac
+else
+	case "$1" in	
+		"kitty_scratch")
+			i3-msg '[class="kitty_scratch"]' scratchpad show
+			;;
+		"Spotify")
+			i3-msg '[class="(?i)Spotify"]' scratchpad show
+			;;
+	esac
+fi
+

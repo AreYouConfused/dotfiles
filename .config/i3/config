@@ -49,10 +49,10 @@ exec_always --no-startup-id nitrogen --restore
 # exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 exec --no-startup-id spotify --disable-smooth-scrolling
 exec --no-startup-id kitty --class kitty_scratch --watcher ~/.config/kitty/kitty_scratch.py
-for_window [class="(?i)Spotify"] move scratchpad
-for_window [class="kitty_scratch"] move scratchpad
-bindsym $super+F9 [class="(?i)Spotify"] scratchpad show
-bindsym $super+F12 exec --no-startup-id i3-dd-term
+for_window [class="(?i)Spotify"] move scratchpad, border pixel 2
+for_window [class="kitty_scratch"] move scratchpad, border pixel 2
+bindsym $super+F9 exec --no-startup-id i3-dd Spotify
+bindsym $super+F12 exec --no-startup-id i3-dd kitty_scratch
 
 set $refresh_i3blocks pkill -RTMIN+1 i3blocks
 bindsym XF86AudioRaiseVolume exec --no-startup-id pamixer -i 2 && $refresh_i3blocks
