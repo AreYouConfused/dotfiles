@@ -277,6 +277,7 @@ for_window [title="^Steam Keyboard$"] floating enable
 assign [class="(?i)discord"] $ws12
 assign [class="(?i)mindustry"] $ws10
 for_window [class="steam_app_960090"] move --no-auto-back-and-forth window to workspace $ws10
+assign [class="(?i)Minecraft*"] $ws10
 
 # class                 border  bground text    indicator child_border
 client.focused          #6272A4 #6272A4 #F8F8F2 #bd93f9   #6272A4
