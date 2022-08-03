@@ -13,7 +13,7 @@ then
 			until i3-msg '[class="kitty_scratch"]' scratchpad show ; do sleep 0.1 ; done
 			;;
 		"Spotify")
-			i3-msg exec spotify
+			i3-msg exec "spotify --disable-smooth-scrolling"
 			until i3-msg '[class="(?i)Spotify"]' scratchpad show ; do sleep 0.1 ; done
 			;;
 	esac
