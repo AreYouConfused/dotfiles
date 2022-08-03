@@ -392,6 +392,7 @@
     appname = Spotify
     script = ~/.config/dunst/dunst-spot.sh
     history_ignore = yes
+    skip_display = yes
 
 [network-manager]
     desktop_entry = nm-applet
