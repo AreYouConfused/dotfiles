@@ -52,6 +52,10 @@ exec --no-startup-id kitty --class kitty_scratch --watcher ~/.config/kitty/kitty
 for_window [class="(?i)Spotify"] move scratchpad, border pixel 2
 for_window [class="kitty_scratch"] move scratchpad, border pixel 2
 bindsym $super+F9 exec --no-startup-id i3-dd Spotify
+bindsym $super+F10 [con_mark="F10"] scratchpad show
+bindsym $super+Shift+F10 exec --no-startup-id i3-mark-scratch "F10"
+bindsym $super+F11 [con_mark="F11"] scratchpad show
+bindsym $super+Shift+F11 exec --no-startup-id i3-mark-scratch "F11"
 bindsym $super+F12 exec --no-startup-id i3-dd kitty_scratch
 
 set $refresh_i3blocks pkill -RTMIN+1 i3blocks

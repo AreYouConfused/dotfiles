@@ -107,11 +107,8 @@ function set_default_playback_device_next {
 }
 
 case "$BLOCK_BUTTON" in
-    1) set_default_playback_device_next ;;
-    2) amixer -q -D $MIXER sset $SCONTROL $CAPABILITY toggle ;;
-    3) set_default_playback_device_next -1 ;;
-    4) amixer -q -D $MIXER sset $SCONTROL $CAPABILITY $AUDIO_DELTA%+ ;;
-    5) amixer -q -D $MIXER sset $SCONTROL $CAPABILITY $AUDIO_DELTA%- ;;
+    1) pavucontrol ;;
+    2) pamixer -t ;;
 esac
 
 function print_format {
@@ -140,7 +137,7 @@ sed 's/.*= "\(.*\)".*/\1/')
         NAME=${DESCRIPTION:-$NAME}
     fi
 
-    if [[ $ACTIVE = "" ]] ; then
+    #if [[ $ACTIVE = "" ]] ; then
         DESCRIPTION=$(pamixer --get-default-sink | tail -1 | awk -v FS=' "' '{print $3}' | awk -v FS='"' '{print $1}')
         NAME=${DESCRIPTION:-$NAME}
         VOL=$(pamixer --get-volume)
@@ -151,7 +148,7 @@ sed 's/.*= "\(.*\)".*/\1/')
 
         COLOR='#ffffff'
         #COLOR='#222225'
-    fi
+    #fi
 
     if [[ $MUTED =~ "no" ]] || [[ $MUTED =~ "false" ]] ; then
         SYMB=$AUDIO_HIGH_SYMBOL
