@@ -1,0 +1,18 @@
+#!/bin/bash
+
+ARTIST=$(playerctl metadata artist)
+TITLE=$(playerctl metadata title)
+MVOL=$(pamixer --sink music --get-volume)
+
+VICON=' '
+[[ $MVOL -le 40 ]] && VICON=' '
+[[ $MVOL -le 0 ]] && VICON=' '
+
+echo "$VICON $MVOL% $ARTIST - $TITLE"
+echo "$VICON $MVOL% $ARTIST - $TITLE"
+
+STATUS=$(playerctl status)
+if [ "$STATUS" = "Paused" ]; then 
+	echo "#a0a0a0"
+fi
+	

@@ -11,6 +11,8 @@
 
 set $super Mod4
 set $alt Mod1
+set $meh Mod1+Control+Shift
+
 
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
@@ -59,6 +61,10 @@ bindsym $super+Shift+F11 exec --no-startup-id i3-mark-scratch "F11"
 bindsym $super+F12 exec --no-startup-id i3-dd kitty_scratch
 
 set $refresh_i3blocks pkill -RTMIN+1 i3blocks
+set $refresh_i3blocks_music pkill -RTMIN+2 i3blocks
+bindsym $meh+F3 exec --no-startup-id pamixer --sink music -i 2 && $refresh_i3blocks_music
+bindsym $meh+F2 exec --no-startup-id pamixer --sink music -d 2 && $refresh_i3blocks_music
+bindsym $meh+F1 exec --no-startup-id pamixer --sink music -t && $refresh_i3blocks_music
 bindsym XF86AudioRaiseVolume exec --no-startup-id pamixer -i 2 && $refresh_i3blocks
 bindsym XF86AudioLowerVolume exec --no-startup-id pamixer -d 2 && $refresh_i3blocks
 bindsym XF86AudioMute exec --no-startup-id pamixer -t && $refresh_i3blocks

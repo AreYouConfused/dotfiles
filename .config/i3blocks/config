@@ -43,7 +43,7 @@ USE_DESCRIPTION=1
 AUDIO_MED_THRESH=45
 LONG_FORMAT=${SYMB}${VOL}% ${NAME}
 
-[mediaplayer]
+[playerctl]
 instance=spotify
 interval=once
 signal=2
