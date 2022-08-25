@@ -62,8 +62,8 @@ bindsym $super+F12 exec --no-startup-id i3-dd kitty_scratch
 
 set $refresh_i3blocks pkill -RTMIN+1 i3blocks
 set $refresh_i3blocks_music pkill -RTMIN+2 i3blocks
-bindsym $meh+F3 exec --no-startup-id pamixer --sink music -i 2 && $refresh_i3blocks_music
-bindsym $meh+F2 exec --no-startup-id pamixer --sink music -d 2 && $refresh_i3blocks_music
+bindsym $meh+F3 exec --no-startup-id pamixer --sink music -i 1 && $refresh_i3blocks_music
+bindsym $meh+F2 exec --no-startup-id pamixer --sink music -d 1 && $refresh_i3blocks_music
 bindsym $meh+F1 exec --no-startup-id pamixer --sink music -t && $refresh_i3blocks_music
 bindsym XF86AudioRaiseVolume exec --no-startup-id pamixer -i 2 && $refresh_i3blocks
 bindsym XF86AudioLowerVolume exec --no-startup-id pamixer -d 2 && $refresh_i3blocks
