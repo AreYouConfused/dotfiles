@@ -8,11 +8,14 @@ VICON=' '
 [[ $MVOL -le 40 ]] && VICON=' '
 [[ $MVOL -le 0 ]] && VICON=' '
 
-echo "$VICON $MVOL% $ARTIST - $TITLE"
-echo "$VICON $MVOL% $ARTIST - $TITLE"
-
 STATUS=$(playerctl status)
-if [ "$STATUS" = "Paused" ]; then 
+if [ "$STATUS" = "Playing" ]; then 
+	echo "$VICON $MVOL% $ARTIST - $TITLE"
+	echo "$VICON $MVOL% $ARTIST - $TITLE"
+else
+	echo "$VICON $MVOL% Media Paused"
+	echo "$VICON $MVOL% Media Paused"
 	echo "#a0a0a0"
 fi
+
 	
