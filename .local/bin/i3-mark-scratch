@@ -1,0 +1,10 @@
+#!/bin/bash
+
+
+if i3-msg [con_mark="$1"] scratchpad show; then
+	exit
+else
+	i3-msg mark $1
+	i3-msg [con_mark="$1"] move scratchpad
+fi
+
