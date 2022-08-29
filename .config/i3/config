@@ -44,7 +44,7 @@ exec --no-startup-id kdeconnect-indicator
 exec_always --no-startup-id setxkbmap -option compose:ralt -option caps:escape_shifted_capslock
 exec --no-startup-id bash -c "if ( DISPLAY=:0 xinput list | grep -i 'Logitech G502' > /dev/null ); then DISPLAY=:0 xinput --set-prop 'pointer:Logitech G502' 'libinput Accel Profile Enabled' 0 1 && DISPLAY=:0 xinput --set-prop 'pointer:Logitech G502' 'libinput Accel Speed' -0.4 ; fi"
 exec --no-startup-id flameshot
-exec --no-startup-id steam-runtime -silent
+exec --no-startup-id steam -silent
 # exec_always --no-startup-id autotiling
 exec_always --no-startup-id nitrogen --restore
 
@@ -284,7 +284,7 @@ for_window [class="^Steam$" title="^Screenshot Uploader$"] floating enable
 for_window [class="^Steam$" title="^Steam Guard - Computer Authorization Required$"] floating enable
 for_window [title="^Steam Keyboard$"] floating enable
 
-assign [class="(?i)discord"] $ws12
+#assign [class="(?i)discord"] $ws12
 assign [class="(?i)mindustry"] $ws10
 for_window [class="steam_app_960090"] move --no-auto-back-and-forth window to workspace $ws10
 assign [class="(?i)Minecraft*"] $ws10
