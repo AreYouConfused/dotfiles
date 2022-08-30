@@ -64,13 +64,14 @@ set $refresh_i3blocks pkill -RTMIN+1 i3blocks
 set $refresh_i3blocks_music pkill -RTMIN+2 i3blocks
 bindsym $meh+F3 exec --no-startup-id pamixer --sink music -i 1 && $refresh_i3blocks_music
 bindsym $meh+F2 exec --no-startup-id pamixer --sink music -d 1 && $refresh_i3blocks_music
-bindsym $meh+F1 exec --no-startup-id pamixer --sink music -t && $refresh_i3blocks_music
+bindsym $meh+F1 exec --no-startup-id playerctl --all-players pause && $refresh_i3blocks_music
+bindsym $meh+s exec --no-startup-id playerctl --player=firefox play-pause
 bindsym XF86AudioRaiseVolume exec --no-startup-id pamixer -i 2 && $refresh_i3blocks
 bindsym XF86AudioLowerVolume exec --no-startup-id pamixer -d 2 && $refresh_i3blocks
 bindsym XF86AudioMute exec --no-startup-id pamixer -t && $refresh_i3blocks
 bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ toggle && $refresh_i3blocks
 set $refresh_i3blocks_media sleep 0.2 && pkill -RTMIN+2 i3blocks
-bindsym XF86AudioPlay exec --no-startup-id playerctl play-pause && $refresh_i3blocks_media
+bindsym XF86AudioPlay exec --no-startup-id playerctl --ignore-player=firefox play-pause && $refresh_i3blocks_media
 bindsym XF86AudioNext exec --no-startup-id playerctl next && $refresh_i3blocks_media
 bindsym XF86AudioPrev exec --no-startup-id playerctl previous && $refresh_i3blocks_media
 
