@@ -1,14 +1,14 @@
 #!/bin/bash
 
-ARTIST=$(playerctl metadata artist)
-TITLE=$(playerctl metadata title)
+ARTIST=$(playerctl --ignore-player=firefox metadata artist)
+TITLE=$(playerctl --ignore-player=firefox metadata title)
 MVOL=$(pamixer --sink music --get-volume)
 
 VICON=' '
 [[ $MVOL -le 40 ]] && VICON=' '
 [[ $MVOL -le 0 ]] && VICON=' '
 
-STATUS=$(playerctl status)
+STATUS=$(playerctl --ignore-player=firefox status)
 if [ "$STATUS" = "Playing" ]; then 
 	echo "$VICON $MVOL% $ARTIST - $TITLE"
 	echo "$VICON $MVOL% $ARTIST - $TITLE"
