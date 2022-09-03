@@ -88,7 +88,7 @@ bindsym $alt+1 exec firefox
 bindsym $alt+2 exec dolphin
 
 bindsym Print exec flameshot screen -c
-bindsym $super+Shift+s exec flameshot gui
+bindsym $super+Shift+s exec flameshot gui -c -p ~/Pictures/Screenshots
 # kill focused window
 bindsym $super+Shift+x kill
 
