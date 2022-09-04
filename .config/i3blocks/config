@@ -45,7 +45,7 @@ LONG_FORMAT=${SYMB}${VOL}% ${NAME}
 
 [playerctl]
 instance=spotify
-interval=once
+interval=25
 signal=2
 
 # Memory usage
@@ -88,16 +88,13 @@ interval=10
 display_wifi_name=0
 signal=3
 
-
-# Battery indicator
-#
-# The battery instance defaults to 0.
-[battery2]
-#label=BAT 
-#label=⚡
+[battery]
 interval=30
-markup=pango
 signal=4
+
+[dualsense]
+interval=25
+signal=6
 
 # Date Time
 #
