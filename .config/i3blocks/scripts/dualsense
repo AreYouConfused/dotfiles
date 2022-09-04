@@ -16,12 +16,3 @@ esac
 echo "  $BATTERY%"
 echo "  $BATTERY%"
 
-case "$BLOCK_BUTTON" in
-	1) 
-		CLICKED=$(dunstify --action="dualsensectl power-off,dualsensectl power-off" "Turn off Controller?" )
-		if [[ $CLICKED == "dualsensectl power-off" ]];then
-			dualsensectl power-off
-		fi
-		;;
-esac
-
