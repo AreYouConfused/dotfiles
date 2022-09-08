@@ -399,6 +399,11 @@
     script = ~/.config/dunst/dunst-net.sh
     skip_display = yes
 
+[dualsense]
+    appname = blueman
+    summary = Purple
+    script = ~/.config/dunst/dualsense.sh
+
 #[espeak]
 #    summary = "*"
 #    script = dunst_espeak.sh
