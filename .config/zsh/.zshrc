@@ -206,5 +206,43 @@ case $(basename "$(cat "/proc/$PPID/comm")") in
     ;;
 esac
 
-PROMPT='%{$fg[green]%}%n$reset_color on $fg[green]%m$reset_color at $fg[cyan]%(5~|%-1~/.../%4~|%~) $(git_prompt_string)
+PROMPT='$TIME%{$fg[green]%}%n$reset_color on $fg[green]%m$reset_color at $fg[cyan]%(5~|%-1~/.../%4~|%~) $(git_prompt_string)
 %(?.%{$fg[cyan]%}.%{$fg[red]%})->%{$reset_color%} '
+
+# from https://github.com/sindresorhus/pretty-time-zsh
+pretty-time(){
+  if (( $# == 0 )); then
+    echo 'Input required'
+    return 1
+  fi
+
+  local human total_seconds=$1
+  local days=$(( total_seconds / 60 / 60 / 24 ))
+  local hours=$(( total_seconds / 60 / 60 % 24 ))
+  local minutes=$(( total_seconds / 60 % 60 ))
+  local seconds=$(( total_seconds % 60 ))
+
+  (( days > 0 )) && human+="${days}d "
+  (( hours > 0 )) && human+="${hours}h "
+  (( minutes > 0 )) && human+="${minutes}m "
+  human+="${seconds}s"
+
+  echo "$human"
+
+}
+
+preexec() {
+    cmd_start="$SECONDS"
+}
+
+precmd() {
+  local cmd_end="$SECONDS"
+  elapsed=$((cmd_end-cmd_start))
+  if [[ $elapsed -gt 10 ]]; then
+    TIME="$fg[yellow]Took: $(pretty-time $elapsed)$reset_color
+"
+  else
+    TIME=""
+  fi
+  # PS1="$elapsed "
+}
