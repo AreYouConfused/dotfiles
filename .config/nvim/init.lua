@@ -20,3 +20,5 @@ opt.cursorline = true
 
 cmd('set listchars=tab:-->,space:·,nbsp:␣,trail:•,eol:$,precedes:«,extends:»')
 
+cmd('hi LineNr guifg=grey')
+cmd('hi CurrentWord guibg=black')
