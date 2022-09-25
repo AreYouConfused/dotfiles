@@ -128,12 +128,12 @@ require'nvim-treesitter.configs'.setup {
 }
 
 vim.opt.termguicolors = true
-vim.cmd [[highlight IndentBlanklineIndent1 guifg=#E06C75 gui=nocombine]]
-vim.cmd [[highlight IndentBlanklineIndent2 guifg=#E5C07B gui=nocombine]]
-vim.cmd [[highlight IndentBlanklineIndent3 guifg=#98C379 gui=nocombine]]
-vim.cmd [[highlight IndentBlanklineIndent4 guifg=#56B6C2 gui=nocombine]]
-vim.cmd [[highlight IndentBlanklineIndent5 guifg=#61AFEF gui=nocombine]]
-vim.cmd [[highlight IndentBlanklineIndent6 guifg=#C678DD gui=nocombine]]
+vim.cmd [[highlight IndentBlanklineIndent1 guifg=#BD93f9 gui=nocombine]]
+vim.cmd [[highlight IndentBlanklineIndent2 guifg=#ff5555 gui=nocombine]]
+vim.cmd [[highlight IndentBlanklineIndent3 guifg=#f1fa8c gui=nocombine]]
+vim.cmd [[highlight IndentBlanklineIndent4 guifg=#8be9fd gui=nocombine]]
+vim.cmd [[highlight IndentBlanklineIndent5 guifg=#50fa7b gui=nocombine]]
+vim.cmd [[highlight IndentBlanklineIndent6 guifg=#ff79c6 gui=nocombine]]
 
 require("indent_blankline").setup {
     space_char_blankline = " ",
@@ -146,3 +146,13 @@ require("indent_blankline").setup {
         "IndentBlanklineIndent6",
     },
 }
+
+local lspconfig = require('lspconfig')
+vim.g.coq_settings = { auto_start = 'shut-up' }
+local servers = { 'clangd', 'rust_analyzer', 'pyright', 'tsserver' }
+for _, lsp in ipairs(servers) do
+  lspconfig[lsp].setup(require('coq').lsp_ensure_capabilities({
+    -- on_attach = my_custom_on_attach,
+  }))
+end
+

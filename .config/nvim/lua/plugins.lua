@@ -3,13 +3,12 @@ require "paq" {
     "bfrg/vim-cpp-modern";
     "joshdick/onedark.vim";
     "junegunn/vim-easy-align";
-    {"neoclide/coc.nvim", branch = "release"};
+    --{"neoclide/coc.nvim", branch = "release"};
     "KabbAmine/vCoolor.vim";
-    "IngoMeyer441/coc_current_word";
+    --"IngoMeyer441/coc_current_word";
     "voldikss/vim-floaterm";
     "alvan/vim-closetag";
     "tpope/vim-sleuth";
-    "Thyrum/vim-stabs";
     "lervag/vimtex";
     "tmsvg/pear-tree";
     "Mofiqul/dracula.nvim";
@@ -17,5 +16,7 @@ require "paq" {
     "lukas-reineke/indent-blankline.nvim";
     "nvim-lualine/lualine.nvim";
     "p00f/nvim-ts-rainbow";
+    "ms-jpq/coq_nvim";
+    "neovim/nvim-lspconfig";
 }
 
