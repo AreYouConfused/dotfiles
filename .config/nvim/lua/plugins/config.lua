@@ -46,7 +46,7 @@ dracula.setup({
 
 require('lualine').setup {
   options = {
-    icons_enabled = false,
+    icons_enabled = true,
     theme = 'auto',
     component_separators = { left = '', right = ''},
     section_separators = { left = '', right = ''},
@@ -149,10 +149,63 @@ require("indent_blankline").setup {
 
 local lspconfig = require('lspconfig')
 vim.g.coq_settings = { auto_start = 'shut-up' }
-local servers = { 'clangd', 'rust_analyzer', 'pyright', 'tsserver' }
+local servers = { 'clangd', 'rust_analyzer', 'tsserver' }
 for _, lsp in ipairs(servers) do
   lspconfig[lsp].setup(require('coq').lsp_ensure_capabilities({
     -- on_attach = my_custom_on_attach,
   }))
 end
 
+lspconfig['pyright'].setup{
+  require('coq').lsp_ensure_capabilities({}),
+  python = {
+    analysis = {
+      autoSearchPaths = true,
+      diagnosticMode = "workspace",
+      useLibraryCodeForTypes = true,
+    },
+  }
+}
+
+require("nvim-tree").setup({
+  sort_by = "case_sensitive",
+  view = {
+    adaptive_size = true,
+    mappings = {
+      list = {
+        { key = "u", action = "dir_up" },
+      },
+    },
+  },
+  renderer = {
+    group_empty = true,
+  },
+  filters = {
+    dotfiles = true,
+  },
+})
+
+require'bufferline'.setup {
+  animation = true,
+  auto_hide = true,
+  tabpages = true,
+  closable = false,
+  clickable = true,
+  exclude_ft = {'javascript'},
+  exclude_name = {'package.json'},
+  icons = true,
+  icon_custom_colors = false,
+  icon_separator_active = '▎',
+  icon_separator_inactive = '▎',
+  icon_close_tab = '',
+  icon_close_tab_modified = '●',
+  icon_pinned = '車',
+  insert_at_end = false,
+  insert_at_start = false,
+  maximum_padding = 1,
+  minimum_padding = 1,
+  maximum_length = 30,
+  semantic_letters = true,
+  letters = 'asdfjkl;ghnmxcvbziowerutyqpASDFJKLGHNMXCVBZIOWERUTYQP',
+  no_name_title = nil,
+}

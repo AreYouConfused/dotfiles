@@ -4,7 +4,7 @@ require "paq" {
     "joshdick/onedark.vim";
     "junegunn/vim-easy-align";
     --{"neoclide/coc.nvim", branch = "release"};
-    "KabbAmine/vCoolor.vim";
+    --"KabbAmine/vCoolor.vim";
     --"IngoMeyer441/coc_current_word";
     "voldikss/vim-floaterm";
     "alvan/vim-closetag";
@@ -18,5 +18,9 @@ require "paq" {
     "p00f/nvim-ts-rainbow";
     "ms-jpq/coq_nvim";
     "neovim/nvim-lspconfig";
+    "kyazdani42/nvim-web-devicons";
+    "kyazdani42/nvim-tree.lua";
+    "romgrk/barbar.nvim";
 }
 
+require "plugins/config"
