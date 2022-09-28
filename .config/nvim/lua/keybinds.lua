@@ -1,7 +1,17 @@
 local opts = { noremap=true, silent=true }
+local nmap = function(key, action)
+  vim.keymap.set('n', key, action, opts)
+end
+local imap = function(key, action)
+  vim.keymap.set('i', key, action, opts)
+end
+local imap = function(key, action)
+  vim.keymap.set('i', key, action, opts)
+end
+
 vim.keymap.set('n', '<space>e', vim.diagnostic.open_float, opts)
 vim.keymap.set('n', '<C-k>', vim.diagnostic.goto_prev, opts)
-vim.keymap.set('n', '<C-j', vim.diagnostic.goto_next, opts)
+vim.keymap.set('n', '<C-j>', vim.diagnostic.goto_next, opts)
 vim.keymap.set('n', '<space>q', vim.diagnostic.setloclist, opts)
 
 -- Use an on_attach function to only map the following keys
@@ -30,4 +40,9 @@ local on_attach = function(client, bufnr)
   vim.keymap.set('n', '<space>f', vim.lsp.buf.formatting, bufopts)
 end
 
-vim.keymap.set('n', '<leader>l', function() vim.wo.list = not vim.wo.list end, opts)
+nmap('<leader>l', function() vim.wo.list = not vim.wo.list end)
+nmap('<C-[>', ':bp<cr>')
+nmap('<C-]>', ':bN<cr>')
+nmap('<C-n><C-n>', ':set invrelativenumber<cr>')
+
+nmap('<space>f', ':NvimTreeToggle<cr>')
