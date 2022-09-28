@@ -107,7 +107,7 @@ function set_default_playback_device_next {
 }
 
 case "$BLOCK_BUTTON" in
-    1) pavucontrol ;;
+    1) pavucontrol & disown ;;
     2) pamixer -t ;;
 esac
 
