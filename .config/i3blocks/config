@@ -96,6 +96,10 @@ signal=4
 interval=25
 signal=6
 
+[clipboardtype]
+interval=once
+align=center
+
 # Date Time
 #
 [time]
