@@ -21,6 +21,7 @@ require "paq" {
     "kyazdani42/nvim-web-devicons";
     "kyazdani42/nvim-tree.lua";
     "romgrk/barbar.nvim";
+    "yamatsum/nvim-cursorline";
 }
 
 require "plugins/config"
