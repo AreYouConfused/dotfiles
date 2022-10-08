@@ -1,16 +1,17 @@
 #!/bin/sh
 
+
+case "$BLOCK_BUTTON" in
+	1) kitty --class k_checkupdates --hold bash -c "sort <(yay -Qum) <(checkupdates)"
+esac
+
 pacmanupdates=$(checkupdates)
 aurupdates=$(yay -Qum)
 
 pcount=$(checkupdates | wc -l)
 aurcount=$(yay -Qum | wc -l)
 count=$(($pcount + $aurcount))
-
-case "$BLOCK_BUTTON" in
-	1) kitty --class k_checkupdates --hold sh -c "echo -e '$pacmanupdates\n$aurupdates'"
-esac
-
+ 
 if [ $count -gt 100 ]; then
 	echo "$count updates"
 	exit 33
