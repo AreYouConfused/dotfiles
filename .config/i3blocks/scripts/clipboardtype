@@ -12,4 +12,5 @@ dunstify -r 9813 "Typing clipboard in 1"
 sleep 1
 dunstify -r 9813 -t 500 "Typing clipboard"
 xdotool type "$(xclip -o -sel clip)"
+echo "" 
 
