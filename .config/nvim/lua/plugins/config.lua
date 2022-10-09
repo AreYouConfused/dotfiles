@@ -127,13 +127,14 @@ require'nvim-treesitter.configs'.setup {
   }
 }
 
+local colors = require("dracula").colors()
 vim.opt.termguicolors = true
-vim.cmd [[highlight IndentBlanklineIndent1 guifg=#BD93f9 gui=nocombine]]
-vim.cmd [[highlight IndentBlanklineIndent2 guifg=#ff5555 gui=nocombine]]
-vim.cmd [[highlight IndentBlanklineIndent3 guifg=#f1fa8c gui=nocombine]]
-vim.cmd [[highlight IndentBlanklineIndent4 guifg=#8be9fd gui=nocombine]]
-vim.cmd [[highlight IndentBlanklineIndent5 guifg=#50fa7b gui=nocombine]]
-vim.cmd [[highlight IndentBlanklineIndent6 guifg=#ff79c6 gui=nocombine]]
+vim.cmd("highlight IndentBlanklineIndent1 guifg=" .. colors.purple .. " gui=nocombine")
+vim.cmd("highlight IndentBlanklineIndent2 guifg=" .. colors.red .. " gui=nocombine")
+vim.cmd("highlight IndentBlanklineIndent3 guifg=" .. colors.yellow .. " gui=nocombine")
+vim.cmd("highlight IndentBlanklineIndent4 guifg=" .. colors.cyan .. " gui=nocombine")
+vim.cmd("highlight IndentBlanklineIndent5 guifg=" .. colors.green .. " gui=nocombine")
+vim.cmd("highlight IndentBlanklineIndent6 guifg=" .. colors.pink .. " gui=nocombine")
 
 require("indent_blankline").setup {
     space_char_blankline = " ",
