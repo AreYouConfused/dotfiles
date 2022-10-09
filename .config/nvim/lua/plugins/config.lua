@@ -227,3 +227,5 @@ require("nvim-cursorline").setup {
   }
 }
 
+require('nvim-highlight-colors').setup {}
+

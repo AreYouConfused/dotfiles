@@ -31,6 +31,7 @@ return require('packer').startup(function(use)
   use { "neovim/nvim-lspconfig" }
   use { "nvim-tree/nvim-tree.lua", requires = { "nvim-tree/nvim-web-devicons", opt = true } }
   use { "romgrk/barbar.nvim" }
+  use { "brenoprata10/nvim-highlight-colors" }
 
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins
