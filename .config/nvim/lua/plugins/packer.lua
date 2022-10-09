@@ -13,26 +13,23 @@ local packer_bootstrap = ensure_packer()
 
 return require('packer').startup(function(use)
   use 'wbthomason/packer.nvim'
-  -- My plugins here
-  -- use 'foo1/bar1.nvim'
-  -- use 'foo2/bar2.nvim'
-  use { "bfrg/vim-cpp-modern" }
-  use { "joshdick/onedark.vim" }
-  use { "junegunn/vim-easy-align" }
-  use { "voldikss/vim-floaterm" }
-  use { "alvan/vim-closetag" }
-  use { "tpope/vim-sleuth" }
-  use { "lervag/vimtex" }
+
+  --use { "bfrg/vim-cpp-modern" }
+  --use { "joshdick/onedark.vim" }
+  --use { "junegunn/vim-easy-align" }
+  --use { "voldikss/vim-floaterm" }
+  --use { "alvan/vim-closetag" }
+  --use { "tpope/vim-sleuth" }
+  --use { "lervag/vimtex" }
   use { "tmsvg/pear-tree" }
   use { "Mofiqul/dracula.nvim" }
-  use { "nvim-treesitter/nvim-treesitter" }
+  use { "nvim-treesitter/nvim-treesitter", run = ":TSUpdate" }
   use { "lukas-reineke/indent-blankline.nvim" }
-  use { "nvim-lualine/lualine.nvim" }
-  use { "p00f/nvim-ts-rainbow" }
+  use { "nvim-lualine/lualine.nvim", requires = { "nvim-tree/nvim-web-devicons", opt = true } }
+  use { "p00f/nvim-ts-rainbow", requires = { "nvim-treesitter/nvim-treesitter" } }
   use { "ms-jpq/coq_nvim" }
   use { "neovim/nvim-lspconfig" }
-  use { "kyazdani42/nvim-web-devicons" }
-  use { "kyazdani42/nvim-tree.lua" }
+  use { "nvim-tree/nvim-tree.lua", requires = { "nvim-tree/nvim-web-devicons", opt = true } }
   use { "romgrk/barbar.nvim" }
 
   -- Automatically set up your configuration after cloning packer.nvim
