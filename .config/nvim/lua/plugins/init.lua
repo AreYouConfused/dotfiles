@@ -14,13 +14,6 @@ local packer_bootstrap = ensure_packer()
 return require('packer').startup(function(use)
   use 'wbthomason/packer.nvim'
 
-  --use { "bfrg/vim-cpp-modern" }
-  --use { "joshdick/onedark.vim" }
-  --use { "junegunn/vim-easy-align" }
-  --use { "voldikss/vim-floaterm" }
-  --use { "alvan/vim-closetag" }
-  --use { "tpope/vim-sleuth" }
-  --use { "lervag/vimtex" }
   use { "tmsvg/pear-tree" }
 
   use { "Mofiqul/dracula.nvim",
