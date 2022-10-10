@@ -45,4 +45,4 @@ nmap('<C-[>', ':bp<cr>')
 nmap('<C-]>', ':bN<cr>')
 nmap('<C-n><C-n>', ':set invrelativenumber<cr>')
 
-nmap('<space>f', ':NvimTreeToggle<cr>')
+nmap('<space>f', ':Neotree left toggle ./<cr>')
