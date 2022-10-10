@@ -1,4 +1,4 @@
-if packer_plugins["dracula"] and packer_plugins["dracula"].loaded then
+if packer_plugins["dracula.nvim"] and packer_plugins["dracula.nvim"].loaded then
   local colors = require("dracula").colors()
   vim.opt.termguicolors = true
   vim.cmd("highlight IndentBlanklineIndent1 guifg=" .. colors.purple .. " gui=nocombine")

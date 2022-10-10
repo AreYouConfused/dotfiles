@@ -24,7 +24,7 @@ return require('packer').startup(function(use)
   use { "tmsvg/pear-tree" }
 
   use { "Mofiqul/dracula.nvim",
-        config = function() require('plugins/config/dracula') end
+        config = function() require('plugins/config/dracula') end,
   }
 
   use { "nvim-treesitter/nvim-treesitter", run = ":TSUpdate", 
@@ -32,7 +32,8 @@ return require('packer').startup(function(use)
   }
 
   use { "lukas-reineke/indent-blankline.nvim", 
-        config = function() require('plugins/config/indent-blankline') end
+        config = function() require('plugins/config/indent-blankline') end,
+        after = { "dracula.nvim" }
   }
 
   use { "nvim-lualine/lualine.nvim",
@@ -66,7 +67,11 @@ return require('packer').startup(function(use)
                      "kyazdani42/nvim-web-devicons", opt = true,
                      "MunifTanjim/nui.nvim", },
         config = function() require('plugins/config/neo-tree') end
-      }
+  }
+
+  use { "numToStr/Comment.nvim",
+        config = function() require('Comment').setup() end
+  }
 
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins
