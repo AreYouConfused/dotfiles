@@ -5,6 +5,7 @@ cmd('set path+=**')
 cmd('colorscheme dracula')
 opt.termguicolors = true
 opt.number = true
+opt.rnu = true
 local spacing = 5
 opt.tabstop = spacing
 opt.sw = spacing
