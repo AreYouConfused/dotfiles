@@ -74,6 +74,12 @@ return require('packer').startup(function(use)
         config = function() require('plugins/config/neo-tree') end
   }
 
+  use { "nvim-telescope/telescope.nvim",
+        tag = '0.1.0',
+        requires = { {'nvim-lua/plenary.nvim'} },
+        config = function() require('plugins/config/telescope') end
+  }
+
   use { "numToStr/Comment.nvim",
         config = function() require('Comment').setup() end,
         tag = "v0.7.0"
