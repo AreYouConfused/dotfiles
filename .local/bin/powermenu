@@ -6,7 +6,7 @@ case "$chosen" in
 	"  Power Off") poweroff ;;
 	"  Restart") reboot ;;
 	"  Hibernate") systemctl hibernate ;;
-	"  Lock") light-locker-command -l ;;
+	"  Lock") loginctl lock-session ;;
 	"  Logout") i3-msg exit ;;
 	*) exit 1 ;;
 esac
