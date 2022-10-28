@@ -11,6 +11,7 @@ opt.tabstop = spacing
 opt.sw = spacing
 opt.sts = spacing
 opt.cursorline = true
+opt.showmode = false
 
 cmd('set listchars=tab:-->,space:·,nbsp:␣,trail:•,eol:$,precedes:«,extends:»')
 
