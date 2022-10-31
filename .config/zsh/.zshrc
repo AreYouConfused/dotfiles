@@ -63,6 +63,7 @@ alias cp="cp -i"                                                # Confirm before
 alias df='df -h'                                                # Human-readable sizes
 alias free='free -m'                                            # Show sizes in MB
 alias make='make -j'
+alias py='python'
 alias ls='ls -vtr --color=auto'
 alias ll='ls -AltrhF --color=auto'
 alias vpn='nordvpn connect'
