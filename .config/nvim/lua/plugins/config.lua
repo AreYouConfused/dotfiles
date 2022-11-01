@@ -104,7 +104,7 @@ local lsp_attach = function(client, bufnr)
 end
 
 vim.g.coq_settings = { auto_start = 'shut-up' }
-local servers = { 'sumneko_lua', 'jedi_language_server', 'clangd', 'rust_analyzer', 'tsserver' }
+local servers = { 'sumneko_lua', 'pyright', 'clangd', 'rust_analyzer', 'tsserver' }
 for _, lsp in ipairs(servers) do
   lspconfig[lsp].setup(coq.lsp_ensure_capabilities({
     on_attach = lsp_attach,
