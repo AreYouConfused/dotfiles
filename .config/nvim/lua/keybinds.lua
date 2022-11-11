@@ -53,3 +53,18 @@ vim.keymap.set('n', 'ff', builtin.find_files, {})
 vim.keymap.set('n', 'fg', builtin.live_grep, {})
 vim.keymap.set('n', 'fb', builtin.buffers, {})
 vim.keymap.set('n', 'fh', builtin.help_tags, {})
+
+vim.api.nvim_create_autocmd('Filetype', {
+  pattern = { 'python', },
+  command = 'nmap <F5> :w<cr>:term python "%"<cr>A',
+})
+
+vim.api.nvim_create_autocmd('Filetype', {
+  pattern = { 'cpp', },
+  command = 'nmap <F5> :w<cr>:term clang++ -g "%" -o "%:r.out" && ./%:r.out<cr>A',
+})
+
+vim.api.nvim_create_autocmd('Filetype', {
+  pattern = { 'c', },
+  command = 'nmap <F5> :w<cr>:term clang -g "%" -o "%:r.out" && ./%:r.out<cr>A',
+})
