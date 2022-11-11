@@ -49,6 +49,8 @@ return require('packer').startup(function(use)
         tag = "v0.1.3"
   }
 
+  use { "mhartington/formatter.nvim" }
+
   use { "SmiteshP/nvim-navic",
         requires = "neovim/nvim-lspconfig",
         commit = "eebc4f15132c587c52fcd2ce2f0da78fc19a16c0"
