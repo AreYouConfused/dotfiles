@@ -48,7 +48,6 @@ nmap('<C-n><C-n>', ':set invrelativenumber<cr>')
 local builtin = require('telescope.builtin')
 nmap('<space>f', builtin.find_files)
 
-local builtin = require('telescope.builtin')
 vim.keymap.set('n', 'ff', builtin.find_files, {})
 vim.keymap.set('n', 'fg', builtin.live_grep, {})
 vim.keymap.set('n', 'fb', builtin.buffers, {})
