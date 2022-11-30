@@ -38,7 +38,7 @@ exec --no-startup-id xss-lock --transfer-sleep-lock -- light-locker-command -l
 
 # autostart section
 exec --no-startup-id nm-applet
-exec --no-startup-id picom --experimental-backends
+exec --no-startup-id picom
 exec --no-startup-id dunst
 exec --no-startup-id blueman-applet
 exec --no-startup-id keepassxc
