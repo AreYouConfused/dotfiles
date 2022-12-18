@@ -2,7 +2,7 @@
 
 set -e
 
-BATTERY=$(dualsensectl battery)
+BATTERY=$(dualsensectl battery | cut -d " " -f1)
 
 case "$BLOCK_BUTTON" in
 	1) 
@@ -13,6 +13,7 @@ case "$BLOCK_BUTTON" in
 		;;
 esac
 
-echo "  $BATTERY%"
-echo "  $BATTERY%"
-
+	if [ ! -z $BATTERY ]; then
+		echo "  $BATTERY%"
+		echo "  $BATTERY%"
+	fi
