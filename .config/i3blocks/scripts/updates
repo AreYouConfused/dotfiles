@@ -1,23 +1,37 @@
-#!/bin/sh
-
-
+#!/bin/zsh
 case "$BLOCK_BUTTON" in
-	1) kitty --class k_checkupdates --hold bash -c "sort <(yay -Qum) <(checkupdates)"
+	1)
+		dunstify -r 9814 "Checking For Updates!"
+		;;
 esac
 
 pacmanupdates=$(checkupdates)
 aurupdates=$(yay -Qum)
 
-pcount=$(checkupdates | wc -l)
-aurcount=$(yay -Qum | wc -l)
-count=$(($pcount + $aurcount))
+pcount=$(echo $pacmanupdates | wc -l)
+aurcount=$(echo $aurupdates | wc -l)
+count=$((pcount + aurcount - 2))
  
-if [ $count -gt 100 ]; then
-	echo "$count updates"
-	exit 33
-elif [ $count -gt 0 ]; then
+if [ $count -gt 0 ]; then
 	echo "$count updates"
 else
-	echo ""
+	echo "0"
 fi
 
+case "$BLOCK_BUTTON" in
+	1)
+		if [ $count -gt 0 ]; then
+			ACTION=$(dunstify -r 9814 --action="default,listUpdates" "Found $count Updates")
+		else
+			dunstify -r 9814 "System is up to date"
+		fi
+
+		case "$ACTION" in 
+			"default")
+				kitty --class k_checkupdates --hold bash -c "echo '$pacmanupdates' ;echo '$aurupdates'"
+		esac
+esac
+
+if [ $count -gt 100 ]; then
+	exit 33
+fi
