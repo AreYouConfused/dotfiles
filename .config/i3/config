@@ -61,12 +61,15 @@ bindsym $super+Shift+F10 exec --no-startup-id i3-mark-scratch "F10"
 bindsym $super+F11 [con_mark="F11"] scratchpad show
 bindsym $super+Shift+F11 exec --no-startup-id i3-mark-scratch "F11"
 bindsym $super+F12 exec --no-startup-id i3-dd kitty_scratch
+bindsym $super+Shift+F9 sticky toggle
 
 set $refresh_i3blocks pkill -RTMIN+1 i3blocks
 set $refresh_i3blocks_music pkill -RTMIN+2 i3blocks
 bindsym $hypr+F3 exec --no-startup-id pamixer --sink music -i 1 && $refresh_i3blocks_music
 bindsym $hypr+F2 exec --no-startup-id pamixer --sink music -d 1 && $refresh_i3blocks_music
 bindsym $hypr+F1 exec --no-startup-id playerctl --all-players pause && $refresh_i3blocks_music
+bindsym $meh+F1 exec --no-startup-id pamixer --default-source -m && $refresh_i3blocks
+bindsym $meh+F4 exec --no-startup-id pamixer --default-source -u && $refresh_i3blocks
 bindsym $meh+s exec --no-startup-id playerctl --player=firefox play-pause
 bindsym XF86AudioRaiseVolume exec --no-startup-id pamixer -i 1 && $refresh_i3blocks
 bindsym XF86AudioLowerVolume exec --no-startup-id pamixer -d 1 && $refresh_i3blocks

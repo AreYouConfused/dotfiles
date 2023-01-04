@@ -43,6 +43,11 @@ USE_DESCRIPTION=1
 AUDIO_MED_THRESH=45
 LONG_FORMAT=${SYMB}${VOL}% ${NAME}
 
+[mic]
+interval=30
+signal=1
+align=center
+
 [playerctl]
 instance=spotify
 interval=25
