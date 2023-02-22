@@ -176,6 +176,14 @@ set $ws17 "17:F7"
 set $ws18 "18:F8"
 
 workspace $ws1 output primary
+workspace $ws2 output primary
+workspace $ws3 output primary
+workspace $ws4 output primary
+workspace $ws5 output primary
+workspace $ws6 output primary
+workspace $ws7 output primary
+workspace $ws8 output primary
+workspace $ws9 output primary
 workspace $ws10 output primary
 workspace_auto_back_and_forth yes
 
@@ -282,6 +290,7 @@ for_window [class="(?i)Firefox" window_role="(?i)page-info"] floating enable
 for_window [class="(?i)kcalc"] floating enable
 for_window [class="flameshot"] floating enable
 for_window [class="(?i)discord"] border pixel 2
+assign [class="(?i)discord"] $ws12
 
 for_window [class="^Steam$" title="^Friends List.*$"] floating enable
 for_window [class="^Steam$" title="Steam - News"] floating enable
