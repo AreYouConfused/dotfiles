@@ -7,9 +7,9 @@ updates=$(sort <<< $(checkupdates) $(yay -Qum))
 
 if [ "
 " = "$updates" ]; then
-	count=$(wc -l <<< $updates)
-else
 	count=0
+else
+	count=$(wc -l <<< $updates)
 fi
  
 if [ $count -gt 0 ]; then
@@ -27,7 +27,8 @@ if [[ -v BLOCK_BUTTON ]]; then
 
 	case "$ACTION" in 
 		"default")
-			kitty --class k_checkupdates --hold zsh -c "echo '$updates'"
+			#kitty --class k_checkupdates --hold zsh -c "echo '$updates'"
+			dunstify -r 9814 "Available Updates" "$updates"
 	esac
 fi
 
