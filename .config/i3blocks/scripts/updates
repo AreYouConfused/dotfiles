@@ -1,25 +1,27 @@
 #!/bin/zsh
 case "$BLOCK_BUTTON" in
-	1)
+	*)
 		dunstify -r 9814 "Checking For Updates!"
 		;;
 esac
 
-pacmanupdates=$(checkupdates)
-aurupdates=$(yay -Qum)
+updates=$(sort <<< $(checkupdates) $(yay -Qum))
 
-pcount=$(echo $pacmanupdates | wc -l)
-aurcount=$(echo $aurupdates | wc -l)
-count=$((pcount + aurcount - 2))
+if [ "
+" = "$updates" ]; then
+	count=$(wc -l <<< $updates)
+else
+	count=0
+fi
  
 if [ $count -gt 0 ]; then
 	echo "$count updates"
 else
-	echo "0"
+	echo "No Updates"
 fi
 
 case "$BLOCK_BUTTON" in
-	1)
+	*)
 		if [ $count -gt 0 ]; then
 			ACTION=$(dunstify -r 9814 --action="default,listUpdates" "Found $count Updates")
 		else
@@ -28,7 +30,7 @@ case "$BLOCK_BUTTON" in
 
 		case "$ACTION" in 
 			"default")
-				kitty --class k_checkupdates --hold bash -c "echo '$pacmanupdates' ;echo '$aurupdates'"
+				kitty --class k_checkupdates --hold zsh -c "echo '$updates'"
 		esac
 esac
 
