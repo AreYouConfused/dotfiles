@@ -50,6 +50,7 @@ exec --no-startup-id steam -silent
 # exec_always --no-startup-id autotiling
 #exec_always --no-startup-id nitrogen --restore
 exec_always --no-startup-id ~/.fehbg
+exec --no-startup-id ~/Nextcloud/Dropbox/BashScripts/loopback.sh
 
 # exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 exec --no-startup-id spotify --disable-smooth-scrolling
