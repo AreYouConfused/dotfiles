@@ -83,7 +83,7 @@ alias config='/usr/bin/git --git-dir=$HOME/.dotfiles --work-tree=$HOME'
 alias se='sudoedit'
 
 # kitty alias section
-if [ "$TERM" = "xterm-kitty" ]; then
+if [ "$TERM" = "xterm-kitty" ] && [ -z "$SSH_TTY" ]; then
   alias ssh='kitty +kitten ssh'
   #alias diff='kitty +kitten diff'
 fi
