@@ -1,9 +1,7 @@
 #!/bin/zsh
-case "$BLOCK_BUTTON" in
-	*)
-		dunstify -r 9814 "Checking For Updates!"
-		;;
-esac
+if [[ -v BLOCK_BUTTON ]]; then
+	dunstify -r 9814 "Checking For Updates!"
+fi
 
 updates=$(sort <<< $(checkupdates) $(yay -Qum))
 
@@ -20,19 +18,18 @@ else
 	echo "No Updates"
 fi
 
-case "$BLOCK_BUTTON" in
-	*)
-		if [ $count -gt 0 ]; then
-			ACTION=$(dunstify -r 9814 --action="default,listUpdates" "Found $count Updates")
-		else
-			dunstify -r 9814 "System is up to date"
-		fi
+if [[ -v BLOCK_BUTTON ]]; then
+	if [ $count -gt 0 ]; then
+		ACTION=$(dunstify -r 9814 --action="default,listUpdates" "Found $count Updates")
+	else
+		dunstify -r 9814 "System is up to date"
+	fi
 
-		case "$ACTION" in 
-			"default")
-				kitty --class k_checkupdates --hold zsh -c "echo '$updates'"
-		esac
-esac
+	case "$ACTION" in 
+		"default")
+			kitty --class k_checkupdates --hold zsh -c "echo '$updates'"
+	esac
+fi
 
 if [ $count -gt 100 ]; then
 	exit 33
