@@ -3,10 +3,11 @@ if [[ -v BLOCK_BUTTON ]]; then
 	dunstify -r 9814 "Checking For Updates!"
 fi
 
-updates=$(sort <<< $(checkupdates) $(yay -Qum))
+unsortedupdates=$(checkupdates && yay -Qum)
+updates=$(sort <<< $unsortedupdates)
 
 if [ "
-" = "$updates" ]; then
+" = "$updates" ] || [ "$updates" = "" ]; then
 	count=0
 else
 	count=$(wc -l <<< $updates)
@@ -19,16 +20,20 @@ else
 fi
 
 if [[ -v BLOCK_BUTTON ]]; then
-	if [ $count -gt 0 ]; then
-		ACTION=$(dunstify -r 9814 --action="default,listUpdates" "Found $count Updates")
+	if [ $count -gt 9 ]; then
+		ACTION=$(dunstify -r 9814 --action="default,listUpdates" "$count Updates Available" "$(head -n 9 <<< $updates)
+Click for $(($count - 9)) more")
+	elif [ $count -gt 1 ]; then
+		dunstify -r 9814 "$count Updates Available" "$updates"
+	elif [ $count -gt 0 ]; then
+		dunstify -r 9814 "1 Update Available" "$updates"
 	else
 		dunstify -r 9814 "System is up to date"
 	fi
 
 	case "$ACTION" in 
 		"default")
-			#kitty --class k_checkupdates --hold zsh -c "echo '$updates'"
-			dunstify -r 9814 "Available Updates" "$updates"
+			kitty --class k_checkupdates zsh -c "echo '$updates' | less"
 	esac
 fi
 
