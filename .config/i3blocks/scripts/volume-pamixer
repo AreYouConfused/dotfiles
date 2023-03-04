@@ -3,6 +3,8 @@
 case "$BLOCK_BUTTON" in
     1) i3-msg exec pavucontrol > /dev/null;;
     2) pamixer -t ;;
+    4) pamixer -i 1 ;;
+    5) pamixer -d 1 ;;
 esac
 
 VOL=$(pamixer --get-volume)
