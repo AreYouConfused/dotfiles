@@ -1,4 +1,25 @@
 #!/bin/bash
+case $button in
+	1)
+		i3-msg exec -q "i3-dd Spotify"
+		;;
+	3)
+		i3-msg exec -q "playerctl --ignore-player=firefox play-pause"
+		sleep 0.1
+		;;
+	4)
+		i3-msg exec -q "pamixer --sink music -i 1"
+		;;
+	5)
+		i3-msg exec -q "pamixer --sink music -d 1"
+		;;
+	6)
+		i3-msg exec -q "playerctl --ignore-player=firefox previous"
+		;;
+	7)
+		i3-msg exec -q "playerctl --ignore-player=firefox next"
+		;;
+esac
 
 ARTIST=$(playerctl --ignore-player=firefox metadata artist)
 TITLE=$(playerctl --ignore-player=firefox metadata title)
@@ -18,4 +39,3 @@ else
 	echo "#a0a0a0"
 fi
 
-	
