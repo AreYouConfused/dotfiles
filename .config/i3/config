@@ -43,7 +43,7 @@ exec --no-startup-id dunst
 exec --no-startup-id blueman-applet
 exec --no-startup-id keepassxc
 exec --no-startup-id kdeconnect-indicator
-exec_always --no-startup-id setxkbmap -option compose:ralt -option caps:escape_shifted_capslock
+#exec_always --no-startup-id setxkbmap -option compose:ralt -option caps:escape_shifted_capslock
 exec --no-startup-id bash -c "if ( DISPLAY=:0 xinput list | grep -i 'Logitech G502' > /dev/null ); then DISPLAY=:0 xinput --set-prop 'pointer:Logitech G502' 'libinput Accel Profile Enabled' 0 1 && DISPLAY=:0 xinput --set-prop 'pointer:Logitech G502' 'libinput Accel Speed' -0.4 ; fi"
 exec --no-startup-id flameshot
 exec --no-startup-id steam -silent
@@ -100,7 +100,8 @@ bindsym $super+Shift+s exec flameshot gui -c -p ~/Pictures/Screenshots
 bindsym $super+Shift+x kill
 
 # start dmenu (a program launcher)
-bindsym $alt+space exec --no-startup-id "rofi -modi drun run -show-icons -show drun -drun-match-fields name,generic"
+bindsym $alt+space exec --no-startup-id "rofi -modi drun run -show-icons -show drun" 
+# -drun-match-fields name,generic"
 bindsym $alt+Tab exec --no-startup-id "rofi -show window -window-format '{c} | {t}'"
 # A more modern dmenu replacement is rofi:
 # bindcode $super+40 exec "rofi -modi drun,run -show drun"
