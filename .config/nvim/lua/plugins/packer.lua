@@ -23,7 +23,7 @@ return require('packer').startup(function(use)
   }
 
   use { "nvim-treesitter/nvim-treesitter", run = ":TSUpdate",
-                commit = "7ddc2b54db9b92846292e081a337dce2ed4f66a1"
+        tag = "v0.9.0"
   }
 
   use { "lukas-reineke/indent-blankline.nvim",
