@@ -232,7 +232,22 @@ require('lualine').setup {
   sections = {
     lualine_a = { 'mode' },
     lualine_b = { 'branch', 'diff', 'diagnostics' },
-    lualine_c = { 'filename' },
+    lualine_c = { 'filename',
+      {
+        function()
+          local a = navic.get_location()
+          if(a ~= "")
+            then
+              return a
+            else
+              return " "
+            end
+        end,
+        cond = function()
+          return navic.is_available()
+        end
+      },
+    },
     lualine_x = { 'encoding', 'fileformat', 'filetype' },
     lualine_y = { 'progress' },
     lualine_z = { 'location' }
@@ -241,21 +256,9 @@ require('lualine').setup {
     lualine_a = {},
     lualine_b = {},
     lualine_c = { 'filename' },
-    lualine_x = { 'location' },
-    lualine_y = {},
-    lualine_z = {}
-  },
-  tabline = {},
-  winbar = {
-    lualine_a = {},
-    lualine_b = { 'filename' },
-    lualine_c = { navic.get_location },
-    lualine_x = {},
-    lualine_y = {},
-    lualine_z = {},
-  },
-  inactive_winbar = {
-    lualine_b = { 'filename' },
+    lualine_x = { 'encoding', 'fileformat', 'filetype' },
+    lualine_y = { 'progress' },
+    lualine_z = { 'location' }
   },
   extensions = {}
 }
