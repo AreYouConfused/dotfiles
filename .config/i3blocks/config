@@ -93,9 +93,9 @@ interval=10
 display_wifi_name=0
 signal=3
 
-[battery]
-interval=30
-signal=4
+# [battery]
+# interval=30
+# signal=4
 
 [dualsense]
 interval=25

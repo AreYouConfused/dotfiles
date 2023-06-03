@@ -25,9 +25,9 @@ ARTIST=$(playerctl --ignore-player=firefox metadata artist)
 TITLE=$(playerctl --ignore-player=firefox metadata title)
 MVOL=$(pamixer --sink music --get-volume)
 
-VICON=''
-[[ $MVOL -le 40 ]] && VICON=''
-[[ $MVOL -le 0 ]] && VICON=''
+VICON='󰎈'
+[[ $MVOL -le 40 ]] && VICON='󰎈'
+[[ $MVOL -le 0 ]] && VICON='󰎊'
 
 STATUS=$(playerctl --ignore-player=firefox status)
 if [ "$STATUS" = "Playing" ]; then 

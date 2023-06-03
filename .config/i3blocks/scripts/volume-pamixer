@@ -13,8 +13,8 @@ ICON=
 [[ $VOL -le 45 ]] && ICON=
 [[ $VOL -le 20 ]] && ICON=
 
-echo "$ICON $VOL%"
-echo "$ICON $VOL%"
+echo "$ICON  $VOL%"
+echo "$ICON  $VOL%"
 
 
 [ "$(pamixer --get-mute)" == "true" ] && echo "#a0a0a0"

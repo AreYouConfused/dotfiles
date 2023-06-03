@@ -5,6 +5,6 @@ if [ "$(pamixer --get-mute --default-source)" = "true" ]; then
 	echo ""
 	echo "#f01818"
 else
-	echo ""
-	echo ""
+	echo "󰍬"
+	echo "󰍬"
 fi
