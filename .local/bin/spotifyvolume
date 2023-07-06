@@ -1,0 +1,40 @@
+#!/bin/bash
+ 
+# check command line arguments first
+if [ $# != 1 ]; then
+        echo "Usage ${0} up|down|mute"
+        exit 1
+fi
+ 
+if [ $1 != "up" -a $1 != "down" -a $1 != "mute" ]; then
+        echo "Usage ${0} up|down|mute"
+        exit 1
+fi
+ 
+# go through each line of the sink-inputs output
+pactl list sink-inputs | while read line; do
+        # Update current sink input id 
+        [[ $line =~ ^Sink\ Input\ \#([[:digit:]]+) ]] && this_input=${BASH_REMATCH[1]}
+        # check if it is spotify
+        if [[ $line =~ "application.name = \"spotify\"" ]]; then
+                echo "Spotify is sink-input ${this_input}"
+                case $1 in
+                        up)
+                                if [[ $(pactl list sink-inputs | grep -B25 Spotify | grep Volume | cut -d "/" -f2 | xargs | cut -d "%" -f1) -gt 99 ]]
+                                then
+                                        exit
+                                fi
+                                pactl set-sink-input-volume ${this_input} +1%
+                                ;;
+                        down)
+                                pactl set-sink-input-volume ${this_input} -1%
+                                ;;
+                        mute)
+                                pactl set-sink-input-mute ${this_input} toggle
+                                ;;
+                        *)
+                                echo "Error"
+                                ;;
+                esac
+        fi
+done
