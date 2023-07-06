@@ -23,7 +23,7 @@ esac
 
 ARTIST=$(playerctl --ignore-player=firefox metadata artist)
 TITLE=$(playerctl --ignore-player=firefox metadata title)
-MVOL=$(pamixer --sink music --get-volume)
+MVOL=$(pactl list sink-inputs | grep -B25 Spotify | grep Volume | cut -d "/" -f2 | xargs | cut -d "%" -f1)
 
 VICON='󰎈'
 [[ $MVOL -le 40 ]] && VICON='󰎈'
