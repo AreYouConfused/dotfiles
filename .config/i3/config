@@ -28,14 +28,19 @@ font pango:Noto Sans Regular 11
 # https://wiki.archlinux.org/index.php/XDG_Autostart
 exec --no-startup-id dex --autostart --environment i3
 
-exec xset s 180 180
-exec --no-startup-id light-locker
+exec --no-startup-id xset s 290 10
+exec --no-startup-id xset dpms 300 0 0
+#exec --no-startup-id light-locker
 #bindsym $alt+Control+l exec light-locker-command -l
 bindsym $alt+Control+l exec loginctl lock-session
+#bindsym $alt+Control+l exec --no-startup-id betterlockscreen -q -l --off 3
 # xss-lock grabs a logind suspend inhibit lock and will use i3lock to lock the
 # screen before suspend. Use loginctl lock-session to lock your screen.
-#exec --no-startup-id xss-lock --transfer-sleep-lock -- betterlockscreen -l
-exec --no-startup-id xss-lock --transfer-sleep-lock -- light-locker-command -l
+exec_always --no-startup-id xss-lock -n xss-dim-helper -- betterlockscreen -q -l
+#exec --no-startup-id xss-lock --transfer-sleep-lock -- light-locker-command -l
+#exec_always --no-startup-id xss-lock --transfer-sleep-lock -- i3lock -c 101010 --pass-media-keys --pass-volume-keys -i ~/Pictures/wallpapers/medium/nebula.jpg -F &
+#exec --no-startup-id idletimer
+exec --no-startup-id systemctl --user start xidlehook-locker.service
 
 
 # autostart section
@@ -43,17 +48,18 @@ exec --no-startup-id nm-applet
 exec --no-startup-id picom
 exec --no-startup-id dunst
 exec --no-startup-id blueman-applet
-exec --no-startup-id keepassxc
+#exec --no-startup-id keepassxc
 exec --no-startup-id kdeconnect-indicator
+exec --no-startup-id caffeine
 exec_always --no-startup-id setxkbmap -option compose:ralt
 exec_always --no-startup-id numlockx on
 exec --no-startup-id bash -c "if ( DISPLAY=:0 xinput list | grep -i 'Logitech G502' > /dev/null ); then DISPLAY=:0 xinput --set-prop 'pointer:Logitech G502' 'libinput Accel Profile Enabled' 0 1 && DISPLAY=:0 xinput --set-prop 'pointer:Logitech G502' 'libinput Accel Speed' -0.4 ; fi"
 exec --no-startup-id flameshot
-exec --no-startup-id steam -silent
+exec --no-startup-id steam
 # exec_always --no-startup-id autotiling
 #exec_always --no-startup-id nitrogen --restore
 exec_always --no-startup-id ~/.fehbg
-exec --no-startup-id ~/Nextcloud/Dropbox/BashScripts/loopback.sh
+#exec --no-startup-id ~/Nextcloud/Dropbox/BashScripts/loopback.sh
 
 # exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 exec --no-startup-id spotify --disable-smooth-scrolling
@@ -96,6 +102,7 @@ bindsym $super+Return exec kitty
 
 bindsym $alt+1 exec firefox
 bindsym $alt+2 exec dolphin
+#bindsym $alt+2 exec thunar
 
 bindsym Print exec flameshot screen -c
 bindsym $super+Shift+s exec flameshot gui -c -p ~/Pictures/Screenshots
@@ -112,6 +119,7 @@ bindsym $alt+Tab exec --no-startup-id "rofi -show window -window-format '{c} | {
 # .desktop file. It is a wrapper around dmenu, so you need that installed.
 # bindcode $super+40 exec --no-startup-id i3-dmenu-desktop
 
+bindsym $super+Shift+f [urgent=latest] focus
 # change focus
 bindsym $super+h focus left
 bindsym $super+j focus down
@@ -246,6 +254,8 @@ bindsym $super+Shift+r restart
 # exit i3 (logs you out of your X session)
 #bindsym $super+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -B 'Yes, exit i3' 'i3-msg exit'"
 bindsym $super+Shift+e exec ~/.local/bin/powermenu
+# using plasma's logout screen instead of i3's
+#bindsym $mod+Shift+e exec --no-startup-id qdbus-qt5 org.kde.ksmserver /KSMServer org.kde.KSMServerInterface.logout -1 -1 -1
 
 # resize window (you can also use the mouse for that)
 mode "resize" {
@@ -274,13 +284,16 @@ mode "resize" {
 
 bindsym $super+r mode "resize"
 
-default_border pixel 2
-gaps inner 8
-gaps outer 4
+default_border normal 2
+# gaps inner 8
+# gaps outer 4
+gaps inner 0
+gaps outer 0
 smart_gaps on
 hide_edge_borders none
 title_align center
 for_window [all] title_window_icon padding 4px
+focus_wrapping no
 
 #####
 #
@@ -288,25 +301,28 @@ for_window [all] title_window_icon padding 4px
 #
 #####
 
-for_window [class=".*"] border pixel 2
+#for_window [class=".*"] border pixel 2
 for_window [class="KeePassXC"] floating enable
 for_window [class="k_checkupdates"] floating enable
 for_window [class="(?i)Firefox" window_role="(?i)page-info"] floating enable
 for_window [class="(?i)kcalc"] floating enable
 for_window [class="flameshot"] floating enable
-for_window [class="(?i)discord"] border pixel 2
-assign [class="(?i)discord"] $ws12
+#for_window [class="(?i)discord"] border pixel 2
+assign [class="(?i)discord"] $ws11
+assign [class="(?i)^Steam$" title="Steam"] $ws11
 
-for_window [class="^Steam$" title="^Friends List.*$"] floating enable
-for_window [class="^Steam$" title="Steam - News"] floating enable
-for_window [class="^Steam$" title=".* - Chat"] floating enable
-for_window [class="^Steam$" title="^Settings$"] floating enable
-for_window [class="^Steam$" title=".* - event started"] floating enable
-for_window [class="^Steam$" title=".* CD key"] floating enable
-for_window [class="^Steam$" title="^Steam - Self Updater$"] floating enable
-for_window [class="^Steam$" title="^Screenshot Uploader$"] floating enable
-for_window [class="^Steam$" title="^Steam Guard - Computer Authorization Required$"] floating enable
-for_window [title="^Steam Keyboard$"] floating enable
+for_window [class="(?i)^Steam$" title="Steam"] border normal 2
+for_window [class="(?i)^Steam$" title="^Friends List.*$"] floating enable
+for_window [class="(?i)^Steam$" title="Steam - News"] floating enable
+for_window [class="(?i)^Steam$" title=".* - Chat"] floating enable
+for_window [class="(?i)^Steam$" title="^Settings$"] floating enable
+for_window [class="(?i)^Steam$" title=".* - event started"] floating enable
+for_window [class="(?i)^Steam$" title=".* CD key"] floating enable
+for_window [class="(?i)^Steam$" title="^Steam - Self Updater$"] floating enable
+for_window [class="(?i)^Steam$" title="^Screenshot Uploader$"] floating enable
+for_window [class="(?i)^Steam$" title="^Steam Guard - Computer Authorization Required$"] floating enable
+for_window [title="(?i)^Steam Keyboard$"] floating enable
+for_window [title="notificationtoasts_*_desktop"] floating enable
 
 #assign [class="(?i)discord"] $ws12
 assign [class="(?i)mindustry"] $ws10
@@ -363,3 +379,4 @@ client.background       #F8F8F2
 #}
 
 include system-specific
+
