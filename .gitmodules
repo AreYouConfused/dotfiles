@@ -4,3 +4,9 @@
 [submodule ".config/zsh/powerlevel10k"]
 	path = .config/zsh/powerlevel10k
 	url = https://github.com/romkatv/powerlevel10k.git
+[submodule ".config/tmux/plugins/tpm"]
+	path = .config/tmux/plugins/tpm
+	url = https://github.com/tmux-plugins/tpm
+[submodule ".config/tmux/plugins/tmux-sensible"]
+	path = .config/tmux/plugins/tmux-sensible
+	url = https://git::@github.com/tmux-plugins/tmux-sensible
