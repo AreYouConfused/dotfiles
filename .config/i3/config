@@ -104,6 +104,9 @@ bindsym $alt+1 exec firefox
 bindsym $alt+2 exec dolphin
 #bindsym $alt+2 exec thunar
 
+bindsym $alt+Shift+v --release exec sleep 0.3 && xdotool type "$(xclip -o -sel clip)"
+
+
 bindsym Print exec flameshot screen -c
 bindsym $super+Shift+s exec flameshot gui -c -p ~/Pictures/Screenshots
 # kill focused window
@@ -118,6 +121,7 @@ bindsym $alt+Tab exec --no-startup-id "rofi -show window -window-format '{c} | {
 # There also is i3-dmenu-desktop which only displays applications shipping a
 # .desktop file. It is a wrapper around dmenu, so you need that installed.
 # bindcode $super+40 exec --no-startup-id i3-dmenu-desktop
+bindsym $super+semicolon exec rofi -modi emoji -show emoji
 
 bindsym $super+Shift+f [urgent=latest] focus
 # change focus
