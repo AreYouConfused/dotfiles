@@ -69,7 +69,7 @@ require("lazy").setup({
   { "nvim-neo-tree/neo-tree.nvim",
         branch = "v2.x",
         dependencies = { "nvim-lua/plenary.nvim",
-                     "kyazdani42/nvim-web-devicons", lazy = true,
+                     "nvim-tree/nvim-web-devicons", lazy = true,
                      "MunifTanjim/nui.nvim", },
   },
 
