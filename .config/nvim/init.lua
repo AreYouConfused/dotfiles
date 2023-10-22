@@ -4,9 +4,9 @@ vim.g.loaded_netrwPlugin = 1
 require("keybinds")
 cmd('source ~/.config/nvim/vim/auto.vim')
 if vim.g.vscode then
-    " VSCode extension
+    -- VSCode extension
 else
-    " ordinary Neovim
+    -- ordinary Neovim
     require("plugins")
 end
 require("options")
