@@ -198,6 +198,15 @@ require("indent_blankline").setup {
   },
 }
 
+require("mason").setup({
+    ui = {
+        icons = {
+            package_installed = "✓",
+            package_pending = "➜",
+            package_uninstalled = "✗"
+        }
+    }
+})
 local lspconfig = require('lspconfig')
 
 vim.g.coq_settings = { auto_start = 'shut-up' }

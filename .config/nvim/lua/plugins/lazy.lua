@@ -11,6 +11,7 @@ if not vim.loop.fs_stat(lazypath) then
 end
 vim.opt.rtp:prepend(lazypath)
 require("lazy").setup({
+	"williamboman/mason.nvim",
 	"folke/which-key.nvim",
 	{ "folke/neoconf.nvim", cmd = "Neoconf" },
 	"folke/neodev.nvim",
@@ -20,7 +21,8 @@ require("lazy").setup({
 	},
 
 	{ "Mofiqul/dracula.nvim",
-		commit = "9fe831e685a76e1a1898a694623b33247c4d036c"
+		commit = "9fe831e685a76e1a1898a694623b33247c4d036c",
+		lazy = false
 	},
 
 	{ "nvim-treesitter/nvim-treesitter", build = ":TSUpdate",
