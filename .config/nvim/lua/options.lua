@@ -2,7 +2,6 @@ local cmd = vim.cmd
 local opt = vim.opt
 
 cmd('set path+=**')
-cmd('colorscheme dracula')
 opt.termguicolors = true
 opt.number = true
 opt.rnu = true
