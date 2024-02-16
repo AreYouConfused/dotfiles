@@ -79,7 +79,6 @@ alias cb='xclip -selection clipboard'
 alias pc='xclip -selection clipboard -o'
 alias diff='diff --color'
 alias youtube-dl='yt-dlp'
-alias config='/usr/bin/git --git-dir=$HOME/.dotfiles --work-tree=$HOME'
 alias se='sudoedit'
 
 # kitty alias section
