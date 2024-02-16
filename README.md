@@ -1,14 +1,9 @@
-How to: 
-
+I recommend using stow to symlink configs
 ```
-git clone --bare --recursive https://github.com/AreYouConfused/dotfiles.git $HOME/.dotfiles
-alias config='/usr/bin/git --git-dir=$HOME/.dotfiles --work-tree=$HOME'
+git clone https://github.com/AreYouConfused/dotfiles.git $HOME/.dotfiles
 
-config pull
-config submodule update
-config config --local status.showUntrackedFiles no
+cd $HOME/.dotfiles
+# adpot brings in the current version of your file into the git repo
+stow --adopt .
 ```
 
-you may need to run a rest to over write your current files
-
-`config reset --hard`
