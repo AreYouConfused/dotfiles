@@ -6,4 +6,5 @@ function ussh --wraps ssh
 		end
 		sleep 1
 	end
+	return $status
 end
