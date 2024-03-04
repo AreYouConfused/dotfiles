@@ -264,4 +264,4 @@ complete -c aur -f -n "__fish_seen_subcommand_from install" -l pacman-conf -d 'T
 
 complete -c aur -f -n '__fish_seen_subcommand_from install' -a (cat '/home/still/.cache/aurutils/pkglist/packages' | tr '\n' ' ')
 
-complete -c aur -f -n '__fish_seen_subcommand_from remove' -a (aur repo -lq | tr '\n' ' ')
+complete -c aur -f -n '__fish_seen_subcommand_from remove' -a (paclist custom | cut -d ' ' -f1 | tr '\n' ' ')
