@@ -18,6 +18,10 @@
   boot.initrd.systemd.enable = true;
   boot.kernelModules = ["kvm-intel"];
   boot.extraModulePackages = [];
+  boot.kernelParams = [
+    "mem_sleep_default=deep"
+    "resume=/dev/disk/by-uuid/94f860f2-2b93-4cd4-ba5f-084d42e2761d"
+  ];
 
   fileSystems."/" = {
     device = "/dev/disk/by-uuid/3108a225-614d-4062-a38b-d50f08240e20";
@@ -56,7 +60,7 @@
   # (the default) this is the recommended approach. When using systemd-networkd it's
   # still possible to use this option, but it's recommended to use it in conjunction
   # with explicit per-interface declarations with `networking.interfaces.<interface>.useDHCP`.
-  networking.useDHCP = lib.mkDefault true;
+  # networking.useDHCP = lib.mkDefault true;
   # networking.interfaces.wlp59s0.useDHCP = lib.mkDefault true;
 
   nixpkgs.hostPlatform = lib.mkDefault "x86_64-linux";
@@ -75,13 +79,12 @@
   services.xserver.videoDrivers = ["nvidia"]; # or "nvidiaLegacy470 etc.
 
   # Force S3 sleep mode. See README.wiki for details.
-  boot.kernelParams = ["mem_sleep_default=deep"];
 
   # Earlier font-size setup
   console.earlySetup = true;
 
   # Prevent small EFI partiion from filling up
-  boot.loader.grub.configurationLimit = 10;
+  boot.loader.systemd-boot.configurationLimit = 10;
 
   # Enable firmware updates via `fwupdmgr`.
   services.fwupd.enable = lib.mkDefault true;
@@ -92,10 +95,10 @@
   hardware.nvidia = {
     powerManagement = {
       # Enable NVIDIA power management.
-      enable = lib.mkDefault true;
+      enable = false;
 
       # Enable dynamic power management.
-      finegrained = lib.mkDefault true;
+      finegrained = false;
     };
 
     prime = {
