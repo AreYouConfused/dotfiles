@@ -26,7 +26,6 @@ require("lazy").setup({
 	},
 
 	{ "nvim-treesitter/nvim-treesitter", build = ":TSUpdate",
-		version = "v0.9.1"
 	},
 
 	{ "lukas-reineke/indent-blankline.nvim",

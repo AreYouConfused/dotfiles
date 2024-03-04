@@ -15,6 +15,7 @@
   boot.initrd.availableKernelModules = ["xhci_pci" "ahci" "nvme" "uas" "sd_mod" "rtsx_pci_sdmmc"];
   boot.initrd.kernelModules = ["dm-snapshot"];
   boot.initrd.luks.devices."cryptroot".device = "/dev/disk/by-uuid/6398751d-6e07-4fda-b1ee-17d55967f443";
+  boot.initrd.systemd.enable = true;
   boot.kernelModules = ["kvm-intel"];
   boot.extraModulePackages = [];
 
@@ -54,4 +55,54 @@
 
   nixpkgs.hostPlatform = lib.mkDefault "x86_64-linux";
   hardware.cpu.intel.updateMicrocode = lib.mkDefault config.hardware.enableRedistributableFirmware;
+
+  services.hardware.bolt.enable = true;
+
+  # Enable OpenGL
+  hardware.opengl = {
+    enable = true;
+    driSupport = true;
+    driSupport32Bit = true;
+  };
+
+  # Load nvidia driver for Xorg and Wayland
+  services.xserver.videoDrivers = ["nvidia"]; # or "nvidiaLegacy470 etc.
+
+  # Force S3 sleep mode. See README.wiki for details.
+  boot.kernelParams = ["mem_sleep_default=deep"];
+
+  # Earlier font-size setup
+  console.earlySetup = true;
+
+  # Prevent small EFI partiion from filling up
+  boot.loader.grub.configurationLimit = 10;
+
+  # Enable firmware updates via `fwupdmgr`.
+  services.fwupd.enable = lib.mkDefault true;
+
+  # This will save you money and possibly your life!
+  services.thermald.enable = lib.mkDefault true;
+
+  hardware.nvidia = {
+    powerManagement = {
+      # Enable NVIDIA power management.
+      enable = lib.mkDefault true;
+
+      # Enable dynamic power management.
+      finegrained = lib.mkDefault true;
+    };
+
+    prime = {
+      offload = {
+        enable = lib.mkOverride 990 true;
+        enableOffloadCmd = lib.mkIf config.hardware.nvidia.prime.offload.enable true; # Provides `nvidia-offload` command.
+      };
+
+      # Bus ID of the Intel GPU.
+      intelBusId = lib.mkDefault "PCI:0:2:0";
+
+      # Bus ID of the NVIDIA GPU.
+      nvidiaBusId = lib.mkDefault "PCI:1:0:0";
+    };
+  };
 }

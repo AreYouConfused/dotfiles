@@ -9,6 +9,13 @@
     home-manager.url = "github:nix-community/home-manager/release-23.11";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
 
+    lanzaboote = {
+      url = "github:nix-community/lanzaboote/v0.3.0";
+
+      # Optional but recommended to limit the size of your system closure.
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
     # TODO: Add any other flake you might need
     # hardware.url = "github:nixos/nixos-hardware";
 
@@ -21,6 +28,7 @@
     self,
     nixpkgs,
     home-manager,
+    lanzaboote,
     ...
   } @ inputs: let
     inherit (self) outputs;
@@ -33,7 +41,7 @@
         # > Our main nixos configuration file <
         modules = [
           ./configuration.nix
-          ./vm-hw.nix
+          ./hw/vm.nix
         ];
         specialArgs = {
           inherit inputs outputs;
@@ -44,7 +52,9 @@
         # > Our main nixos configuration file <
         modules = [
           ./configuration.nix
-          ./xps.nix
+          ./hw/xps.nix
+          lanzaboote.nixosModules.lanzaboote
+          ./hw/secboot.nix
         ];
         specialArgs = {
           inherit inputs outputs;
