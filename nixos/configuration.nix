@@ -154,6 +154,9 @@
     wget
     git
     curl
+    zip
+    gzip
+    bzip2
     fish
     alejandra
     gnupg
@@ -164,6 +167,11 @@
     lua
     lua-language-server
     cargo
+    steam
+    mangohud
+    file
+    nvtop
+    prismlauncher
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
@@ -200,6 +208,7 @@
       # Use keys only. Remove if you want to SSH using password (not recommended)
       PasswordAuthentication = false;
     };
+    openFirewall = true;
   };
 
   # This value determines the NixOS release from which the default

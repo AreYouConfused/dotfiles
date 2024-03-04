@@ -1,5 +1,5 @@
-#!/usr/bin/env bash
-#
+#!/usr/bin/env nix-shell
+#! nix-shell -i bash -p bash alejandra ranger git libnotify
 # I believe there are a few ways to do this:
 #
 #    1. My current way, using a minimal /etc/nixos/configuration.nix that just imports my config from my home directory (see it in the gist)
@@ -17,6 +17,7 @@ pushd ~/.dotfiles/nixos/
 
 # Edit your config
 #$EDITOR configuration.nix
+ranger
 
 # Autoformat your nix files
 alejandra . hw >/dev/null

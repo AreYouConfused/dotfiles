@@ -31,6 +31,12 @@
     options = ["subvol=@home" "compress=zstd"];
   };
 
+  fileSystems."/home/still/.local/share/Steam/steamapps" = {
+    device = "/dev/disk/by-uuid/3108a225-614d-4062-a38b-d50f08240e20";
+    fsType = "btrfs";
+    options = ["subvol=@steamapps" "compress=zstd"];
+  };
+
   fileSystems."/nix" = {
     device = "/dev/disk/by-uuid/3108a225-614d-4062-a38b-d50f08240e20";
     fsType = "btrfs";
