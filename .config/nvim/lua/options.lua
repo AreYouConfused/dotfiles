@@ -18,3 +18,10 @@ cmd('hi LineNr guifg=grey')
 cmd('hi CurrentWord guibg=black')
 
 opt.signcolumn = "number"
+
+vim.api.nvim_create_autocmd("FileType", {
+	pattern = "gitcommit",
+	callback = function()
+		cmd("setlocal spell spelllang=en_us")
+	end
+})
