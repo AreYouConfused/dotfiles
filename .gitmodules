@@ -13,3 +13,4 @@
 [submodule "nixos"]
 	path = nixos
 	url = git@github.com:AreYouConfused/nixos-config.git
+	branch = main
