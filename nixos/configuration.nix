@@ -75,7 +75,13 @@
   # networking.proxy.noProxy = "127.0.0.1,localhost,internal.domain";
 
   # Enable networking
-  networking.networkmanager.enable = true;
+  networking.networkmanager = {
+    enable = true;
+    wifi.macAddress = "stable";
+    ethernet.macAddress = "stable";
+  };
+
+  services.resolved.enable = true;
 
   # Set your time zone.
   time.timeZone = "America/New_York";
@@ -117,6 +123,7 @@
   sound.enable = true;
   hardware.pulseaudio.enable = false;
   security.rtkit.enable = true;
+  security.polkit.enable = true;
   services.pipewire = {
     enable = true;
     alsa.enable = true;
@@ -188,13 +195,14 @@
     defaultEditor = true;
   };
 
+  programs.partition-manager.enable = true;
   # List services that you want to enable:
 
   # Enable the OpenSSH daemon.
   # services.openssh.enable = true;
 
   # Open ports in the firewall.
-  networking.firewall.allowedTCPPorts = [22];
+  # networking.firewall.allowedTCPPorts = [22];
   # networking.firewall.allowedUDPPorts = [ ... ];
   # Or disable the firewall altogether.
   # networking.firewall.enable = false;
@@ -210,6 +218,22 @@
       PasswordAuthentication = false;
     };
     openFirewall = true;
+  };
+
+  systemd = {
+    user.services.polkit-kde-agent-1 = {
+      description = "polkit-kde-authentication-agent-1";
+      wantedBy = ["graphical-session.target"];
+      wants = ["graphical-session.target"];
+      after = ["graphical-session.target"];
+      serviceConfig = {
+        Type = "simple";
+        ExecStart = "${pkgs.polkit-kde-agent}/libexec/polkit-kde-authentication-agent-1";
+        Restart = "on-failure";
+        RestartSec = 1;
+        TimeoutStopSec = 10;
+      };
+    };
   };
 
   # This value determines the NixOS release from which the default
