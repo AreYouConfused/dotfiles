@@ -1,0 +1,29 @@
+import = [
+	"~/.config/alacritty/breeze.toml",
+	"~/.config/alacritty/keybinds.toml",
+	]
+
+[font]
+size = 10
+
+[font.bold]
+family = "CaskaydiaCove NF"
+style = "SemiBold"
+
+[font.bold_italic]
+family = "CaskaydiaCove NF"
+style = "SemiBold Italic"
+
+[font.italic]
+family = "CaskaydiaCove NF"
+style = "Italic"
+#style = "SemiLight Italic"
+
+[font.normal]
+family = "CaskaydiaCove NF"
+#style = "SemiLight"
+
+[window]
+opacity = 0.93
+blur = true
+dimensions = { columns = 110, lines = 33 }
