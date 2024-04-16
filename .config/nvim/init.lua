@@ -7,8 +7,8 @@ if vim.g.vscode then
 else
     -- ordinary Neovim
 	require("plugins")
-	require("keybinds")
 	cmd('colorscheme dracula')
 end
+require("keybinds")
 require("options")
 
