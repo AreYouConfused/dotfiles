@@ -7,7 +7,7 @@ case "$chosen" in
 	"  Restart") reboot ;;
 	"  Hibernate") systemctl hibernate ;;
 	"  Lock") loginctl lock-session ;;
-	"  Logout") i3-msg exit ;;
+	"  Logout") hyprctl dispatch exit ;;
 	*) exit 1 ;;
 esac
 
