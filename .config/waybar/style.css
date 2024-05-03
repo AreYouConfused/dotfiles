@@ -64,15 +64,16 @@ button:hover {
 }
 
 #workspaces button.focused {
-    background-color: #64727D;
     box-shadow: inset 0 -3px #6272A4;
 }
 
 #workspaces button.visible {
+    background-color: #282A36;
     box-shadow: inset 0 -3px #6272A4;
 }
 
 #workspaces button.active {
+    background-color: #44475A;
 	box-shadow: inset 0 -3px #BD93F9;
 }
 
