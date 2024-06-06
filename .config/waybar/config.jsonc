@@ -17,6 +17,7 @@
     ],
     "modules-right": [
         "mpd",
+	   "custom/dualsense",
         "pulseaudio",
         //"network",
         //"power-profiles-daemon",
@@ -202,6 +203,12 @@
         "escape": true,
         "exec": "$HOME/.config/waybar/mediaplayer.py 2> /dev/null" // Script in resources folder
         // "exec": "$HOME/.config/waybar/mediaplayer.py --player spotify 2> /dev/null" // Filter player based on name
+    },
+    "custom/dualsense": {
+            "tooltip": false,
+            "return-type": "json",
+            "exec": "$HOME/.config/waybar/dualsense-notifier.sh",
+            "on-click": "dualsensectl power-off",
     },
     "custom/notification": {
         "tooltip": false,
